@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import logo from "../../assets/PhysioBuddies Logo.jpg";
-import bg from '../../assets/BG.jpg';
 import { Link, useNavigate } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 
@@ -21,47 +19,50 @@ export default function Header() {
   };
 
   return (
-    <div className={`h-20 flex justify-between px-6 lg:px-40 items-center relative z-10`}>
-      {/* Logo */}
-      <h1 className="text-white font-extrabold text-xl lg:text-2xl cursor-pointer" onClick={() => navigate("/")}>
-        Physio <span className="text-black">Buddies</span>
-      </h1>
-
-      {/* Desktop and Tablet Navigation */}
-      <ul className="hidden lg:flex items-center gap-8 text-white font-semibold">
-        {navItems.map(({ name, src }) => (
-          <li key={name}>
-            <Link to={src}>{name.toUpperCase()}</Link>
-          </li>
-        ))}
-      </ul>
-
-      <div className="flex items-center justify-center gap-6">
-        {/* Login Button - Always Visible */}
-        <button className="px-6 sm:px-12 py-2 bg-lime-400 font-semibold">
-          Login
-        </button>
-
-        {/* Mobile and Tablet Menu Icon */}
-        <div className="lg:hidden text-white" onClick={toggleMobileMenu}>
-          {isMobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+    <header className="bg-white shadow-md fixed w-full top-0 z-10">
+      <div className="flex items-center justify-between px-6 py-4">
+        {/* Logo */}
+        <div className="text-2xl font-bold text-green-600 cursor-pointer" onClick={() => navigate("/")}>
+          Physioplus
         </div>
+
+        {/* Desktop Menu */}
+        <nav className="hidden md:flex space-x-6">
+          {navItems.map((item) => (
+            <Link
+              key={item.name}
+              to={item.src}
+              className="text-gray-700 hover:text-green-600"
+            >
+              {item.name}
+            </Link>
+          ))}
+        </nav>
+
+        {/* Mobile Menu Toggle */}
+        <button
+          className="md:hidden text-2xl text-gray-700 focus:outline-none"
+          onClick={toggleMobileMenu}
+        >
+          {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+        </button>
       </div>
 
-      {/* Mobile and Tablet Menu */}
+      {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="absolute top-20 left-0 w-full bg-[#016068] flex flex-col items-center py-4 lg:hidden">
-          <ul className="flex flex-col items-center gap-4 text-white font-semibold">
-            {navItems.map(({ name, src }) => (
-              <li key={name} className="hover:bg-green-500">
-                <Link to={src} onClick={toggleMobileMenu}>
-                  {name.toUpperCase()}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <nav className="flex flex-col md:hidden bg-green-50 px-6 py-4 space-y-4">
+          {navItems.map((item) => (
+            <Link
+              key={item.name}
+              to={item.src}
+              className="text-gray-700 hover:text-green-600"
+              onClick={toggleMobileMenu} // Close menu on click
+            >
+              {item.name}
+            </Link>
+          ))}
+        </nav>
       )}
-    </div>
+    </header>
   );
 }
