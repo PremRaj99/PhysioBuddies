@@ -29,12 +29,24 @@ const userSchema = new mongoose.Schema(
       type: String, // cloudinary url
       reqired: true,
     },
-    coverImage: {
-      type: String, // Cloudinary URL
-    },
     password: {
       type: String,
       required: [true, "Password is required"],
+    },
+    phone: {
+      type: String,
+      required: true,
+      validate: {
+        validator: function (v) {
+          return /^[0-9]{10}$/.test(v);
+        },
+        message: "Invalid Phone Number",
+      },
+    },
+    role: {
+      type: String,
+      default: "user",
+      enum: ["user", "admin", "therapist"],
     },
     refreshToken: {
       type: String,
