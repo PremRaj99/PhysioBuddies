@@ -20,7 +20,7 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-slate-100 shadow-md  w-full  z-10">
+    <header className="bg-green-50 shadow-md  w-full  z-10">
       {/*top-0 fixed*/}
       <div className="flex items-center justify-between px-6 py-4">
         {/* Logo */}
@@ -34,7 +34,7 @@ export default function Header() {
             <Link
               key={item.name}
               to={item.src}
-              className="text-gray-700 hover:text-green-600"
+              className="text-gray-700 hover:text-green-700 hover:underline "
             >
               {item.name}
             </Link>
