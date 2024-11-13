@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
+import logo from "../../assets/images/logo.png"
 
 export default function Header() {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -19,11 +20,12 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-white shadow-md fixed w-full top-0 z-10">
+    <header className="bg-slate-100 shadow-md  w-full  z-10">
+      {/*top-0 fixed*/}
       <div className="flex items-center justify-between px-6 py-4">
         {/* Logo */}
-        <div className="text-2xl font-bold text-green-600 cursor-pointer" onClick={() => navigate("/")}>
-          Physioplus
+        <div className="h-16 hover:cursor-pointer" onClick={() => navigate("/")}>
+          <img src={logo} alt="logo" className="h-full"/>
         </div>
 
         {/* Desktop Menu */}
