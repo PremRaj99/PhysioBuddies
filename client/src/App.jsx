@@ -4,7 +4,7 @@ import Home from "./pages/Home/Home";
 import About from "./pages/About";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import Human from "./pages/Human/Human";
+// import Human from "./pages/Human/Human";
 import Services from "./components/Home/Services"
 
 export default function App() {
@@ -16,7 +16,7 @@ export default function App() {
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
       </Routes>
-        <Human/>
+        {/* <Human/> */}
       <Footer />
     </Router>
   );
