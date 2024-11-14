@@ -14,13 +14,7 @@ export default function Footer() {
       <footer>
         {/* Footer Upper Section */}
 
-        <hr />
-        <br />
-        <br />
-        <br />
-        <br />
-
-        <div className="relative -bottom-6 flex lg:flex-row flex-col items-center justify-center gap-10 bg-green-50 rounded-xl lg:mx-40 mx-8 px-8 pt-10 md:pt-0 md:px-32">
+        <div className="relative -bottom-6 flex lg:flex-row flex-col items-center justify-center gap-10 bg-green-50 rounded-xl lg:mx-40 mx-8 px-8 pt-10 md:pt-0 mt-4 md:px-32">
           <div className="flex flex-col gap-4 items-center lg:items-start flex-1">
             <h2 className="text-3xl font-semibold">Contact Us</h2>
             <p className="text-sm lg:text-start text-center text-gray-700">
