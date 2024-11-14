@@ -4,6 +4,8 @@ import { ApiError } from "../utils/ApiError.js";
 import { ApiRespose } from "../utils/ApiResponse.js";
 import { asyncHandler } from "../utils/asyncHandler.js";
 import uploadOnCloudinary from "../utils/fileUpload.js";
+import generateCrypto from "../utils/generateCryptoCode.js";
+import EmailVerification from "../models/emailVerification.model.js";
 
 const generateAccessAndRefreshTokens = async (userId) => {
   try {
@@ -23,7 +25,7 @@ const generateAccessAndRefreshTokens = async (userId) => {
 };
 
 export const signup = asyncHandler(async (req, res, next) => {
-  const { fullName, email, username, password } = req.body;
+  const { fullName, email, username, password, phone, role } = req.body;
 
   if (
     [fullName, email, username, password].some((field) => field?.trim() === "")
@@ -39,25 +41,13 @@ export const signup = asyncHandler(async (req, res, next) => {
   }
 
   const avatarLocalPath = req.files?.avatar[0]?.path;
-  // const coverImageLocalPath = req.files?.coverImage[0]?.path;
-
-  let coverImageLocalPath;
-  if (
-    req.files &&
-    Array.isArray(req.files.coverIamge) &&
-    req.files.coverIamge.length > 0
-  ) {
-    coverImageLocalPath = req.files.coverImage[0].path;
-  }
   // console.log("Avatar Path:", avatarLocalPath)
-  // console.log("Cover Image Path:", coverImageLocalPath);
 
   if (!avatarLocalPath) {
     throw new ApiError(400, "Avatar files are required");
   }
 
   const avatar = await uploadOnCloudinary(avatarLocalPath);
-  const coverIamge = await uploadOnCloudinary(coverImageLocalPath);
 
   if (!avatar) {
     throw new ApiError(400, "Avatar files are required");
@@ -66,11 +56,14 @@ export const signup = asyncHandler(async (req, res, next) => {
   const user = await User.create({
     fullName,
     avatar: avatar.url,
-    coverImage: coverIamge?.url || "",
     email,
     password,
     username: username.toLowerCase(),
+    phone,
+    role: role || "user",
   });
+
+  const token = generateCrypto(user._id, email);
 
   const createUser = await User.findById(user._id).select(
     "-password -refreshToken"
@@ -82,6 +75,33 @@ export const signup = asyncHandler(async (req, res, next) => {
   return res
     .status(201)
     .json(new ApiRespose(200, createUser, "user registered successfully"));
+});
+
+export const verifyEmail = asyncHandler(async (req, res, next) => {
+  const { email, token } = req.body;
+
+  const verifyEmail = await EmailVerification.findOne(email);
+
+  if (!verifyEmail) {
+    throw ApiError(400, "email not exist!");
+  }
+  if (verifyEmail.token !== token) {
+    throw ApiError(400, "invalid OTP code");
+  }
+
+  const user = await User.findOneAndUpdate(
+    { email },
+    { isVerified: true },
+    { new: true }
+  );
+
+  if (!user) {
+    throw ApiError(400, "user does not exist!");
+  }
+
+  return res
+    .status(200)
+    .json(new ApiRespose(200, user, "Email verified successfully!"));
 });
 
 export const login = asyncHandler(async (req, res, next) => {
@@ -189,5 +209,11 @@ export const refreshAccessToken = asyncHandler(async (req, res, next) => {
     .status(200)
     .cookie("accessToken", accessToken)
     .cookie("refreshToken", refreshToken)
-    .json(new ApiRespose(200, { user: rest, accessToken, refreshToken }, "access token refreshed"));
+    .json(
+      new ApiRespose(
+        200,
+        { user: rest, accessToken, refreshToken },
+        "access token refreshed"
+      )
+    );
 });

@@ -1,7 +1,7 @@
 import express from "express";
-import { login, refreshAccessToken, signout, signup } from "../controllers/auth.controller.js";
-import { upload } from "../middleware/multer.middleware.js";
-import verifyJWT from "../middleware/auth.middleware.js";
+import { login, refreshAccessToken, signout, signup, verifyEmail } from "../controllers/auth.controller.js";
+import { upload } from "../middlewares/multer.middleware.js";
+import verifyJWT from "../middlewares/auth.middleware.js";
 
 const router = express.Router();
 
@@ -13,13 +13,10 @@ router.post(
       name: "avatar",
       maxCount: 1,
     },
-    {
-      name: "coverImage",
-      maxCount: 1,
-    },
   ]),
   signup
 );
+router.post("/verify", verifyJWT, verifyEmail)
 router.post("/signout", verifyJWT, signout);
 router.post("/refresh", refreshAccessToken);
 

@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, { Mongoose } from "mongoose";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 
@@ -18,6 +18,10 @@ const userSchema = new mongoose.Schema(
       required: true,
       lowercase: true,
       trim: true,
+    },
+    emailVerified: {
+      type: Boolean,
+      default: false
     },
     fullName: {
       type: String,
