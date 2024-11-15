@@ -8,6 +8,7 @@ import Human from "./pages/Human/Human";
 import Services from "./components/Home/Services"
 import Blog from "./pages/Blog/Blog"
 import BlogPreview from "./pages/Blog/BlogPreview";
+import Recommend from "./components/Home/Recommend";
 
 
 export default function App() {
@@ -21,6 +22,7 @@ export default function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/blog/:id" element={<BlogPreview />} />
       </Routes>
+      <Recommend/>
       <Footer />
     </Router>
   );

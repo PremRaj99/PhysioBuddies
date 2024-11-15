@@ -22,7 +22,7 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-green-50 shadow-md  w-full  z-10">
+    <header className="bg-green-100 shadow-md  w-full  z-10">
       {/*top-0 fixed*/}
       <div className="flex items-center justify-between px-8 py-4">
         {/* Logo */}
@@ -49,7 +49,7 @@ export default function Header() {
             </NavLink>
           ))}
         </nav>
-        <AppointmentButton />
+        <AppointmentButton/>
 
         {/* Mobile Menu Toggle */}
         <button
