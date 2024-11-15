@@ -13,29 +13,23 @@ export default function Footer() {
     <>
       <footer>
         {/* Footer Upper Section */}
-        <div className="flex flex-col sm:flex-row items-center justify-center h-full bg-green-50 px-8 sm:px-16 lg:px-28 py-8 sm:py-0 xl:h-3/5 xl:mx-48 md:mx-20 ">
-          <div className="p-4 sm:p-6 md:p-8 flex flex-col justify-evenly text-center sm:text-left sm:w-1/2">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
-              Contact Us
-            </h2>
-            <p className="text-sm sm:text-base lg:text-lg mb-6">
+
+        <div className="relative -bottom-6 flex lg:flex-row flex-col items-center justify-center gap-10 bg-green-50 rounded-xl lg:mx-40 mx-8 px-8 pt-10 md:pt-0 mt-4 md:px-32">
+          <div className="flex flex-col gap-4 items-center lg:items-start flex-1">
+            <h2 className="text-3xl font-semibold">Contact Us</h2>
+            <p className="text-sm lg:text-start text-center text-gray-700">
               Whether you have questions about our services, want to book an
               appointment, or just need some advice, we're here to help. Reach
               out to our friendly team today.
             </p>
-            <button className="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-full w-full sm:w-auto">
-              Contact Us Now
+            <button className="px-4 w-full md:w-fit md:px-16 py-2 bg-green-600 text-white rounded-full text-sm">
+              Contact Us
             </button>
           </div>
-
-          {/* Image Content */}
-          <div className="w-full sm:w-1/2 lg:w-2/3 flex justify-center sm:justify-end mt-8 sm:mt-0">
-            <img
-              src={img}
-              alt="Physiotherapist"
-              className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-auto rounded-lg object-cover"
-            />
+          <div className="flex-1 h-72 flex items-end justify-center">
+            <img src={img} className="w-[300px]" alt="" />
           </div>
+          {/* <div className="flex-1"></div> */}
         </div>
 
         <div className="bg-yellow-50 flex flex-wrap w-full justify-evenly py-8 px-10 leading-6">
@@ -125,7 +119,7 @@ export default function Footer() {
           <div className="w-screen text-center">
             <hr className="my-4 border-t-2 border-gray-300" />
             <Link to="/" className="hover:underline">
-              Copyright © 2024 by Physioplus. All Rights Reserved.
+              Copyright © 2024 by PhysioBuddies. All Rights Reserved.
             </Link>
           </div>
         </div>
