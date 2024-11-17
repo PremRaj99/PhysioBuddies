@@ -6,6 +6,7 @@ import Human from "../Human/Human";
 export default function Home() {
   return (
     <div>
+      <Hero/>
       <Human />
       <Recommend/>
     </div>

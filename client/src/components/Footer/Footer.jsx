@@ -11,6 +11,16 @@ import img from "../../assets/images/img.png";
 export default function Footer() {
   return (
     <>
+      <marquee className="bg-green-600 text-white h-16 flex justify-center items-center mb-24">
+        {" "}
+        ✦ Explore our blog, discover health's beauty and benefits
+        <span className="mx-12">✦ Experience expert care</span> ✦ Get Discount
+        Upto 25% off✦ Get ₹ 100 off by using FIRSTFREE11{" "}
+        <span className="mx-12">
+          ✦ Explore our blog, discover health's beauty and benefits
+        </span>
+        ✦ Experience expert care
+      </marquee>
       <footer>
         {/* Footer Upper Section */}
 
