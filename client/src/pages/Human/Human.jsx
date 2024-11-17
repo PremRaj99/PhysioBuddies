@@ -5,7 +5,7 @@ import "../Human/Human.css";
 import humanBody from "../../assets/images/humanBody.png"
 const Human = () => {
   return (
-    <div className="h-screen p-7 flex flex-col justify-center items-center lg:flex-row lg:justify-around lg:items-center bg-green-50">
+    <div className="h-[calc(100vh-96px)] p-7 flex flex-col justify-center items-center lg:flex-row lg:justify-around lg:items-center bg-green-50">
       {/* Container for Image */}
       <div className="h-[500px] w-[335px] scale-75 sm:scale-100 flex justify-center items-center">
         <form className="relative">

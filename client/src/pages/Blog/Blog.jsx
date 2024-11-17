@@ -1,8 +1,10 @@
 import React from "react";
 import BlogCard from "../../components/Common/BlogCard";
 import RecommendCard from "../../components/Common/RecommendCard";
+import { useNavigate } from "react-router-dom";
 
 export default function Blog() {
+  const navigate = useNavigate()
   const doctors = [
     {
       imageUrl:
@@ -106,6 +108,8 @@ export default function Blog() {
             img={doctors.imageUrl}
             date={doctors.date}
             views={doctors.views}
+
+            onClick = {() => navigate("/blog-preview")}
           />
         ))}
       </div>

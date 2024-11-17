@@ -32,7 +32,7 @@ export default function Footer() {
           {/* <div className="flex-1"></div> */}
         </div>
 
-        <div className="bg-yellow-50 flex flex-wrap w-full justify-evenly py-8 px-10 leading-6">
+        <div className="bg-yellow-50 flex flex-wrap w-full justify-evenly py-12 px-10 leading-6">
           {/* Logo and Description */}
           <div className="flex flex-col gap-4">
             <img src={logo} alt="Logo" className=" w-28 md:w-48 " />

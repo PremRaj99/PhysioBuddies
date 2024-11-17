@@ -1,5 +1,6 @@
 import React from "react";
 import RecommendCard from "../Common/RecommendCard";
+import { useNavigate } from "react-router-dom";
 
 export default function Recommend() {
   const recommendations = [
@@ -54,10 +55,11 @@ export default function Recommend() {
       desc: "Comprehensive evaluations and sport-specific treatments enhance performance, prevent injuries, and promote optimal recovery for athletes.",
     },
   ];
+  const navigate = useNavigate()
 
   return (
     <div className="bg-yellow-50 p-2 pb-6 text-[#2D3342]">
-      <h2 className="text-center my-1 p-4 font-semibold md:text-3xl text-lg ">
+      <h2 className="text-center m-4 p-4 font-semibold md:text-3xl text-lg ">
         Need More Clarity on This !!!
       </h2>
       <div>
@@ -71,6 +73,7 @@ export default function Recommend() {
               img={recommendations.img}
               title={recommendations.title}
               desc={recommendations.desc}
+              navigate = {()=>navigate('/doctor')}
             />
           ))}
         </div>

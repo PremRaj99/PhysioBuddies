@@ -10,9 +10,8 @@ export default function Header() {
 
   const navItems = [
     { name: "Home", src: "/" },
-    { name: "Services", src: "/services" },
-    { name: "Doctors", src: "/doctors" },
-    {name: "Blog", src:"/blog"},
+    { name: "Doctor", src: "/doctor" },
+    { name: "Blog", src:"/blog"},
     { name: "About", src: "/about" },
     { name: "Contact", src: "/contact" },
   ];
@@ -42,7 +41,7 @@ export default function Header() {
               className={({ isActive }) =>
                 isActive
                   ? "text-green-700 underline"
-                  : "text-gray-700 hover:text-green-700 hover:underline "
+                  : "text-gray-700 hover:text-green-700 hover:underline hover:scale-105"
               }
             >
               {item.name}

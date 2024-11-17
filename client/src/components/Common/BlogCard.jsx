@@ -8,6 +8,7 @@ export default function BlogCard({
   descr = "",
   date,
   views = 0,
+  onClick
 }) {
   const eclipseTitle =
     title.length > 60 ? title.substring(0, 60) + "..." : title;
@@ -15,7 +16,7 @@ export default function BlogCard({
     descr.length > 150 ? descr.substring(0, 150) + "..." : descr;
   const dateFormat = formatDate(date);
   return (
-    <div className="w-96 border border-gray-300 rounded-lg hover:scale-[1.01] shadow-lg duration-150">
+    <div className="w-96 border border-gray-300 rounded-lg hover:scale-[1.01] shadow-lg duration-150 cursor-pointer" onClick={onClick}>
       <img
         src={img}
         alt="card img"
