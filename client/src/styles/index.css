@@ -4,7 +4,13 @@
 
 
 *{
-    font-family: Arial, Helvetica, sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif; */
     /* border: 1px solid red; */
     scroll-behavior: smooth;
+}
+
+@font-face {
+    font-family: "SourGummy";
+  src:
+    url("../assets/fonts/SourGummy.ttf")
 }

@@ -1,0 +1,26 @@
+.scroll-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+    /* background: #f0f0f0; */
+    padding: 10px 0;
+    display: flex;
+}
+
+.scroll-content {
+    font-family: 'SourGummy'!important;
+    display: inline-block;
+    white-space: nowrap;
+    animation: scrollLeft 10s linear infinite;
+  }
+  
+  @keyframes scrollLeft {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  

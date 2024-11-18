@@ -9,6 +9,7 @@ import Services from "./components/Home/Services"
 import Blog from "./pages/Blog/Blog"
 import BlogPreview from "./pages/Blog/BlogPreview";
 import EditProfile from "./pages/Profile/EditProfile";
+import TherapistList from "./pages/Therapist/TherapistList";
 
 
 export default function App() {
@@ -22,6 +23,7 @@ export default function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/editprofile" element={<EditProfile />} />
         <Route path="/blog/:id" element={<BlogPreview />} />
+        <Route path="/doctors" element={<TherapistList />} />
       </Routes>
       <Footer />
     </Router>
