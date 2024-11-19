@@ -1,5 +1,11 @@
 import express from "express";
-import { login, refreshAccessToken, signout, signup, verifyEmail } from "../controllers/auth.controller.js";
+import {
+  login,
+  refreshAccessToken,
+  signout,
+  signup,
+  verifyEmail,
+} from "../controllers/auth.controller.js";
 import { upload } from "../middlewares/multer.middleware.js";
 import verifyJWT from "../middlewares/auth.middleware.js";
 
@@ -16,7 +22,7 @@ router.post(
   ]),
   signup
 );
-router.post("/verify", verifyJWT, verifyEmail)
+router.post("/verify", verifyJWT, verifyEmail);
 router.post("/signout", verifyJWT, signout);
 router.post("/refresh", refreshAccessToken);
 

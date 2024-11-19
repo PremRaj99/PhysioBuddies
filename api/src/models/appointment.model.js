@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const appointmentSchema = new mongoose.Schema(
   {
-    patinetId: {
+    patientId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
       required: true,
