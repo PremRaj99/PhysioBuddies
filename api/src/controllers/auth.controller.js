@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
 import User from "../models/user.model.js";
 import { ApiError } from "../utils/ApiError.js";
-import { ApiRespose } from "../utils/ApiResponse.js";
+import { ApiResponse } from "../utils/ApiResponse.js";
 import { asyncHandler } from "../utils/asyncHandler.js";
 import uploadOnCloudinary from "../utils/fileUpload.js";
 import generateCrypto from "../utils/generateCryptoCode.js";
@@ -39,23 +39,21 @@ export const signup = asyncHandler(async (req, res, next) => {
   if (existUser) {
     throw new ApiError(409, "User with this email or username already exists!");
   }
+  const avatarLocalPath = req.files?.avatar?.[0]?.path;
 
-  const avatarLocalPath = req.files?.avatar[0]?.path;
-  // console.log("Avatar Path:", avatarLocalPath)
+  let avatarUrl =
+    "https://static.vecteezy.com/system/resources/previews/019/879/186/non_2x/user-icon-on-transparent-background-free-png.png";
 
-  if (!avatarLocalPath) {
-    throw new ApiError(400, "Avatar files are required");
-  }
-
-  const avatar = await uploadOnCloudinary(avatarLocalPath);
-
-  if (!avatar) {
-    throw new ApiError(400, "Avatar files are required");
+  if (avatarLocalPath) {
+    const avatar = await uploadOnCloudinary(avatarLocalPath);
+    if (avatar) {
+      avatarUrl = avatar.url;
+    }
   }
 
   const user = await User.create({
     fullName,
-    avatar: avatar.url,
+    avatar: avatarUrl,
     email,
     password,
     username: username.toLowerCase(),
@@ -74,7 +72,7 @@ export const signup = asyncHandler(async (req, res, next) => {
   }
   return res
     .status(201)
-    .json(new ApiRespose(200, createUser, "user registered successfully"));
+    .json(new ApiResponse(200, createUser, "user registered successfully"));
 });
 
 export const verifyEmail = asyncHandler(async (req, res, next) => {
@@ -89,6 +87,10 @@ export const verifyEmail = asyncHandler(async (req, res, next) => {
     throw ApiError(400, "invalid OTP code");
   }
 
+  if (verifyEmail.expiredIn < new Date()) {
+    throw ApiError(400, "OTP code is expired!");
+  }
+
   const user = await User.findOneAndUpdate(
     { email },
     { isVerified: true },
@@ -101,7 +103,7 @@ export const verifyEmail = asyncHandler(async (req, res, next) => {
 
   return res
     .status(200)
-    .json(new ApiRespose(200, user, "Email verified successfully!"));
+    .json(new ApiResponse(200, user, "Email verified successfully!"));
 });
 
 export const login = asyncHandler(async (req, res, next) => {
@@ -141,7 +143,7 @@ export const login = asyncHandler(async (req, res, next) => {
     .cookie("accessToken", accessToken, options)
     .cookie("refreshToken", refreshToken, options)
     .json(
-      new ApiRespose(
+      new ApiResponse(
         200,
         { user: rest, refreshToken, accessToken },
         "User Logged In Successfully!"
@@ -170,7 +172,7 @@ export const signout = asyncHandler(async (req, res, next) => {
     .status(200)
     .clearCookie("accessToken", options)
     .clearCookie("refreshToken", options)
-    .json(new ApiRespose(200, {}, "User logged Out"));
+    .json(new ApiResponse(200, {}, "User logged Out"));
 });
 
 export const refreshAccessToken = asyncHandler(async (req, res, next) => {
@@ -210,7 +212,7 @@ export const refreshAccessToken = asyncHandler(async (req, res, next) => {
     .cookie("accessToken", accessToken)
     .cookie("refreshToken", refreshToken)
     .json(
-      new ApiRespose(
+      new ApiResponse(
         200,
         { user: rest, accessToken, refreshToken },
         "access token refreshed"

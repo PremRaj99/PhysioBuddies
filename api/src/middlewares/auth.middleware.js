@@ -28,3 +28,24 @@ export default async function verifyJWT(req, res, next) {
     throw new ApiError(500, "Something went wrong in JWT verification");
   }
 }
+
+export async function verifyAdmin(req, res, next) {
+  if (req.user.role !== "admin") {
+    throw new ApiError(403, "Forbidden");
+  }
+  next();
+}
+
+export async function verifyTherapist(req, res, next) {
+  if (req.user.role !== "therapist") {
+    throw new ApiError(403, "Forbidden");
+  }
+  next();
+}
+
+export async function verifyUser(req, res, next) {
+  if (req.user.role !== "user") {
+    throw new ApiError(403, "Forbidden");
+  }
+  next();
+}
