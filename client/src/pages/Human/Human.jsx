@@ -1,8 +1,8 @@
 import React from "react";
-import humanImg from "../../assets/images/human.png";
+// import humanImg from "../../assets/images/human.png";
 import { FaArrowRight } from "react-icons/fa6";
 import "../Human/Human.css";
-import humanBody from "../../assets/images/humanBody.png"
+import humanBody from "../../assets/images/humanbody.png"
 const Human = () => {
   return (
     <div className="h-[calc(100vh-96px)] p-7 flex flex-col justify-center items-center lg:flex-row lg:justify-around lg:items-center bg-green-50">
