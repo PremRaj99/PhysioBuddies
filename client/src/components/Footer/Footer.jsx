@@ -20,7 +20,7 @@ export default function Footer() {
     <>
       {/* marquee */}
       <div className="font-[SourGummy] flex items-center bg-green-500 text-white py -4 md:py-8 font-semibold md:font-bold text-xl ">
-        <p class="marquee ">
+        <p className="marquee ">
           <span>
             ✦ Explore our blog, discover health's
             beauty and benefits
@@ -30,7 +30,7 @@ export default function Footer() {
             ✦ Get ₹ 100 off by using FIRSTFREE11
           </span>
         </p>
-        <p class="marquee marquee2">
+        <p className="marquee marquee2">
           <span>✦ Experience expert care</span>
           <span>✦ Experience expert care</span>
           <span>✦ Get Discount Upto 25% off</span>

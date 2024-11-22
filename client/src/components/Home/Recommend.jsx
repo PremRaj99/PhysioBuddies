@@ -68,11 +68,12 @@ export default function Recommend() {
           perfect solution for your health.
         </h3>
         <div className="flex flex-wrap py-2 gap-4 justify-center items-center">
-          {recommendations.map((recommendations) => (
+          {recommendations.map((recommendations, index) => (
             <RecommendCard
               img={recommendations.img}
               title={recommendations.title}
               desc={recommendations.desc}
+              key={index}
               navigate = {()=>navigate('/doctor')}
             />
           ))}

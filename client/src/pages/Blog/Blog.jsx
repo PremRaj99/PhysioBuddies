@@ -93,7 +93,7 @@ export default function Blog() {
     },
   ];
 
-  doctors.map((doctors) => ({}));
+  // doctors.map((doctors) => ({}));
 
   return (
     <>
@@ -101,13 +101,14 @@ export default function Blog() {
         <h2 className="text-xl font-semibold">Our Blogs</h2>
       </div>
       <div className="flex flex-wrap p-4 md:p-16 mx-auto justify-center items-center gap-4">
-        {doctors.map((doctors) => (
+        {doctors.map((doctors, index) => (
           <BlogCard
             title={doctors.title}
             descr={doctors.description}
             img={doctors.imageUrl}
             date={doctors.date}
             views={doctors.views}
+            key={index}
 
             onClick = {() => navigate("/blog-preview")}
           />
