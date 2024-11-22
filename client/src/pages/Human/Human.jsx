@@ -3,6 +3,7 @@ import React from "react";
 import { FaArrowRight } from "react-icons/fa6";
 import "../Human/Human.css";
 import humanBody from "../../assets/images/humanBody.png"
+import DropdownMenu from "./DropdownMenu";
 const Human = () => {
   const diseases = [
     { name: "Stroke" },
@@ -31,7 +32,7 @@ const Human = () => {
         <div className="h-[500px] w-[335px] scale-75 sm:scale-100 flex justify-center items-center">
           <form className="relative">
             <img
-              src={humanBodyPNG}
+              src={humanBody}
               alt="Human Img"
               className="h-[500px] w-[335px]"
             />
