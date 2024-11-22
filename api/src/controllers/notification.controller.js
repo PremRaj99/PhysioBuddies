@@ -7,7 +7,7 @@ export const getNotifications = asyncHandler(async (req, res) => {
   try {
     const { _id, role } = req.user;
     let notification;
-    if (role === "therapist") {
+    if (role === "therapist" || role === "user") {
       notification = await Notification.find({ userId: _id }).sort({
         createdAt: -1,
       });

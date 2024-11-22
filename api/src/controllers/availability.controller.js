@@ -5,9 +5,11 @@ import { asyncHandler } from "../utils/asyncHandler.js";
 
 export const getAvailability = asyncHandler(async (req, res) => {
   try {
-    const availability = await Availability.findById(req.params.id);
+    const availability = await Availability.find({
+      therapistId: req.params.id,
+    });
     if (!availability) {
-      throw new ApiError(404, "Availability not found");
+      throw new ApiError(404, "Availability not found for this therapist");
     }
 
     res.status(200).json(ApiResponse(200, availability, "Success"));
@@ -18,7 +20,20 @@ export const getAvailability = asyncHandler(async (req, res) => {
 
 export const getAvailabilities = asyncHandler(async (req, res) => {
   try {
-    const availabilities = await Availability.find();
+    const { q, page = 1, limit = 10 } = req.query;
+    let query = {};
+    if (q) {
+      query = { $regex: q, $options: "i" };
+    }
+    const availabilities = await Availability.find({
+      $or: [{ day: query }, { date: query }, { timeSlots: query }],
+    })
+      .skip((page - 1) * limit)
+      .limit(limit * 1)
+      .exec();
+    if (!availabilities) {
+      throw new ApiError(404, "No availabilities found for this therapist");
+    }
     res.status(200).json(ApiResponse(200, availabilities, "Success"));
   } catch (error) {
     throw new ApiError(500, error.message);
@@ -36,7 +51,9 @@ export const createAvailability = asyncHandler(async (req, res) => {
       date,
       timeSlots,
     });
-    res.status(201).json(ApiResponse(201, availability, "Availability created"));
+    res
+      .status(201)
+      .json(ApiResponse(201, availability, "Availability created"));
   } catch (error) {
     throw new ApiError(500, error.message);
   }
