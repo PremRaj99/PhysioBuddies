@@ -19,44 +19,49 @@ export default function Footer() {
   return (
     <>
       {/* marquee */}
-      <div className="scroll-container !font-[SourGummy]">
-        <div
-          ref={banner}
-          className="scroll-content bg-green-600 text-white h-16 md:h-20 flex justify-center items-center gap-8 mb-24 font-semibold md:font-bold text-base"
-          
-        >
-          <span className="!font-[SourGummy]">
+      <div className="font-[SourGummy] flex items-center bg-green-500 text-white py -4 md:py-8 font-semibold md:font-bold text-xl ">
+        <p class="marquee ">
+          <span>
             ✦ Explore our blog, discover health's
             beauty and benefits
           </span>
+          <span>✦ Get Discount Upto 25% off</span>
+          <span>
+            ✦ Get ₹ 100 off by using FIRSTFREE11
+          </span>
+        </p>
+        <p class="marquee marquee2">
+          <span>✦ Experience expert care</span>
           <span>✦ Experience expert care</span>
           <span>✦ Get Discount Upto 25% off</span>
           <span>
             ✦ Get ₹ 100 off by using FIRSTFREE11
           </span>
-          {/* <span>✦ Explore our blog, discover health's beauty and benefits</span>
-        <span>✦ Experience expert care</span> */}
-        </div>
-        <div
-          className="scroll-content bg-green-600 text-white h-16 md:h-20 flex justify-center items-center gap-8 mb-24 font-semibold md:font-bold text-base"
-        >
-          <span>
-            ✦ Explore our blog, discover health's
-            beauty and benefits
-          </span>
-          <span>✦ Experience expert care</span>
-          <span>✦ Get Discount Upto 25% off</span>
-          <span>
-            ✦ Get ₹ 100 off by using FIRSTFREE11
-          </span>
-          {/* <span>✦ Explore our blog, discover health's beauty and benefits</span>
-        <span>✦ Experience expert care</span> */}
-        </div>
+        </p>
       </div>
+      {/* <div
+            ref={banner}
+            className="scroll-content text-white h-16 md:h-20 flex justify-center items-center gap-8 font-semibold md:font-bold text-base"
+          >
+            <span>
+              ✦ Explore our blog, discover
+              health's beauty and benefits
+            </span>
+            <span>✦ Experience expert care</span>
+            <span>
+              ✦ Get Discount Upto 25% off
+            </span>
+            <span>
+              ✦ Get ₹ 100 off by using FIRSTFREE11
+            </span>
+          </div> */}
+      {/* </div>
+      </div> */}
+
       <footer>
         {/* Footer Upper Section */}
 
-        <div className="relative -bottom-16 flex lg:flex-row flex-col items-center justify-center gap-10 bg-green-50 rounded-xl lg:mx-40 mx-8 px-8 pt-10 md:pt-0 mt-4 md:px-32">
+        <div className="relative -bottom-16 flex lg:flex-row flex-col items-center justify-center gap-10 bg-green-50 rounded-xl lg:mx-40 mx-8 px-8 pt-10 md:pt-0 mt-6 md:px-32">
           <div className="flex flex-col gap-4 items-center lg:items-start flex-1">
             <h2 className="text-3xl font-semibold">
               Contact Us
