@@ -1,12 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-    content: [
+  content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    extend: {
+      screens: {
+        "xl-custom": "1262px", // Custom breakpoint
+      },
+    },
   },
-  plugins: [
-  ],
-}
-
+  plugins: [],
+};

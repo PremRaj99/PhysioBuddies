@@ -44,7 +44,6 @@ export default function TherapistItemCard({
         {isAvailable && (
           <div className="bg-green-500 w-5 h-5 rounded-full absolute right-[-150px] top-8"></div>
         )}
-        
       </div>
       <div className="flex flex-col p-5 gap-2">
         <div className="flex bg-white rounded-2xl w-24 h-12 gap-2 items-center justify-center">
@@ -56,9 +55,7 @@ export default function TherapistItemCard({
           {specialization}
           <span>{experience}</span>
         </div>
-        <div className="">
-          {verified}
-        </div>
+        <div className="">{verified}</div>
       </div>
     </div>
   );

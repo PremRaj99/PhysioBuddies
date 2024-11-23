@@ -7,7 +7,7 @@ import { FaLinkedin } from "react-icons/fa6";
 import logo from "../../assets/images/logo.png";
 import { Link } from "react-router-dom";
 import img from "../../assets/images/img.png";
-import "./Footer.css";
+import Corousel from "../Common/Corousel";
 
 export default function Footer() {
   const banner = useRef();
@@ -18,45 +18,8 @@ export default function Footer() {
   scroll();
   return (
     <>
-      {/* marquee */}
-      <div className="font-[SourGummy] flex items-center bg-green-500 text-white py -4 md:py-8 font-semibold md:font-bold text-xl ">
-        <p className="marquee ">
-          <span>
-            ✦ Explore our blog, discover health's
-            beauty and benefits
-          </span>
-          <span>✦ Get Discount Upto 25% off</span>
-          <span>
-            ✦ Get ₹ 100 off by using FIRSTFREE11
-          </span>
-        </p>
-        <p className="marquee marquee2">
-          <span>✦ Experience expert care</span>
-          <span>✦ Experience expert care</span>
-          <span>✦ Get Discount Upto 25% off</span>
-          <span>
-            ✦ Get ₹ 100 off by using FIRSTFREE11
-          </span>
-        </p>
-      </div>
-      {/* <div
-            ref={banner}
-            className="scroll-content text-white h-16 md:h-20 flex justify-center items-center gap-8 font-semibold md:font-bold text-base"
-          >
-            <span>
-              ✦ Explore our blog, discover
-              health's beauty and benefits
-            </span>
-            <span>✦ Experience expert care</span>
-            <span>
-              ✦ Get Discount Upto 25% off
-            </span>
-            <span>
-              ✦ Get ₹ 100 off by using FIRSTFREE11
-            </span>
-          </div> */}
-      {/* </div>
-      </div> */}
+      {/* Banner */}
+      <Corousel text="✦ Explore our blog, discover health's beauty and benefits" />
 
       <footer>
         {/* Footer Upper Section */}
