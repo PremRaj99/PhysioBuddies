@@ -11,11 +11,11 @@ export default function ContactUs() {
       {/* Contact Form */}
       <div className="bg-green-50 flex flex-wrap justify-center ">
         {/* Text Sention */}
-        <div className="bg-green-100 w-auto md:w-1/2 px-8 py-4  text-green-800">
-          <h1 className="text-xl text-green-950">
+        <div className="bg-green-100 w-auto md:w-1/2 px-8 py-4  text-gray-800">
+          <h1 className="text-xl text-gray-700">
             BOOK ONLINE
           </h1>
-          <h2 className="md:text-3xl text-2xl my-4">
+          <h2 className="md:text-3xl text-2xl my-4 text-green-950 font-[SourGummy]">
             Relieve Pain, Restore Movement, Revive
             Your Life
           </h2>
@@ -61,19 +61,19 @@ export default function ContactUs() {
         </div>
 
         {/* Form Section */}
-        <div className="w-auto md:w-1/2 px-8 py-4">
-          <form>
+        <div className="w-auto md:w-1/2 px-8 py-">
+          <form className="text-gray-800">
             <h3 className="text-2xl md:text-3xl text-green-950 my-4">
               Ready to book an appointment with a
               licensed physiotherapist?
             </h3>
-            <p className="text-green-800 text-xl">
+            <p className="text-xl">
               Fill out the form below, and a
               member of our team will reach out to
               you shortly.
             </p>
             <div className="flex flex-col xl-custom:flex-row gap-4 my-4">
-              <label className="text-green-800">
+              <label >
                 Full Name
               </label>
               <input
@@ -81,7 +81,7 @@ export default function ContactUs() {
                 id="name"
                 className="border-2 border-green-800 rounded-md px-2 py-1"
               />
-              <label className="text-green-800">
+              <label >
                 Phone Number
               </label>
               <input
@@ -91,7 +91,7 @@ export default function ContactUs() {
               />
             </div>
             <div className="flex flex-col gap-4 my-4">
-              <label className="text-green-800">
+              <label >
                 Email
               </label>
               <input
