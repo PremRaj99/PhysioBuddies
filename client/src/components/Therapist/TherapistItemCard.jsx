@@ -3,6 +3,7 @@ import { MdVerified } from "react-icons/md";
 import { MdOutlineStarPurple500 } from "react-icons/md";
 import { MdOutlineStarHalf } from "react-icons/md";
 import { MdOutlineStarOutline } from "react-icons/md";
+import StarRating from "./StarRating";
 
 export default function TherapistItemCard({
   profilePhoto,
@@ -30,32 +31,39 @@ export default function TherapistItemCard({
     for (let i = 0; i < emptyStars; i++) {
       stars.push("E");
     }
-    // console.log(rating)
   }, []);
 
   return (
-    <div className="shadow-lg rounded-xl bg-yellow-50 flex p-1">
-      <div className="rounded-3xl w-52 p-2 mx-1 relative">
-        <img
-          src={profilePhoto}
-          alt="img"
-          className="object-cover rounded-xl"
-        />
-        {isAvailable && (
-          <div className="bg-green-500 w-5 h-5 rounded-full absolute right-[-150px] top-8"></div>
-        )}
-      </div>
-      <div className="flex flex-col p-5 gap-2">
-        <div className="flex bg-white rounded-2xl w-24 h-12 gap-2 items-center justify-center">
-          <MdOutlineStarPurple500 className="text-yellow-300" />
-          <span>{rating}</span>
+    <div className="border border-gray-300 rounded-xl overflow-hidden cursor-pointer hover:translate-y-[-10px] transition-all duration-500">
+      <img
+        src={profilePhoto}
+        alt=""
+        className="object-cover w-56 bg-green-500"
+      />
+      <div className="p-4">
+        <div className="flex items-center gap-2 text-sm text-center text-green-500">
+          {isAvailable && (
+            <p className="w-2 h-2 rounded-full bg-green-500"></p>
+          )}
+          <p>{specialization}</p>
         </div>
-        <div className="text-xl">{fullName}</div>
-        <div className="text-gray-500 flex gap-5">
-          {specialization}
-          <span>{experience}</span>
+        <p className="text-[#262626] text-lg font-medium flex gap-2 items-center">
+          {fullName}l
+          <span>
+            {verified && <MdVerified />}
+          </span>
+        </p>
+        <p className="text-[#5C5C5C] text-sm">
+          {experience}
+        </p>
+        <div className="flex items-center gap-2  text-yellow-400">
+          {/* stars logic yet to implement */}
+          
+          <StarRating rating={rating} />
+          <p className="text-[#5C5C5C]">
+            {reviewCount} reviews
+          </p>
         </div>
-        <div className="">{verified}</div>
       </div>
     </div>
   );

@@ -11,6 +11,7 @@ import BlogPreview from "./pages/Blog/BlogPreview";
 import EditProfile from "./pages/Profile/EditProfile";
 import TherapistList from "./pages/Therapist/TherapistList";
 import ContactUs from "./pages/Contact/ContactUs";
+import TherapistDetail from "./pages/Therapist/TherapistDetail";
 
 
 export default function App() {
@@ -26,6 +27,7 @@ export default function App() {
         <Route path="/blog/:id" element={<BlogPreview />} />
         <Route path="/doctors" element={<TherapistList />} />
         <Route path="/contact" element={<ContactUs />} />
+        <Route path="/doctors/preview" element={<TherapistDetail />} />
       </Routes>
       <Footer />
     </Router>

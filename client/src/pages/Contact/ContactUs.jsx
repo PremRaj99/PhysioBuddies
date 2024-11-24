@@ -2,6 +2,18 @@ import React from "react";
 import physio from "../../assets/images/physio.gif";
 
 export default function ContactUs() {
+  document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+      const dateInput =
+        document.getElementById("datePicker");
+      const today = new Date()
+        .toISOString()
+        .split("T")[0];
+      dateInput.min = today;
+    }
+  );
+
   return (
     <>
       <h2 className="text-xl font-semibold text-green-950 text-center bg-green-50 py-16">
@@ -10,12 +22,12 @@ export default function ContactUs() {
 
       {/* Contact Form */}
       <div className="bg-green-50 flex flex-wrap justify-center ">
-        {/* Text Sention */}
-        <div className="bg-green-100 w-auto md:w-1/2 px-8 py-4  text-gray-800">
+        {/* Text Content */}
+        <div className="bg-green-100 w-auto md:w-1/2 px-12 py-4  text-gray-900">
           <h1 className="text-xl text-gray-700">
             BOOK ONLINE
           </h1>
-          <h2 className="md:text-3xl text-2xl my-4 text-green-950 font-[SourGummy]">
+          <h2 className="md:text-5xl text-2xl my-4 text-green-950 font-[SourGummy]">
             Relieve Pain, Restore Movement, Revive
             Your Life
           </h2>
@@ -62,8 +74,8 @@ export default function ContactUs() {
 
         {/* Form Section */}
         <div className="w-auto md:w-1/2 px-8 py-">
-          <form className="text-gray-800">
-            <h3 className="text-2xl md:text-3xl text-green-950 my-4">
+          <form className="text-gray-900 px-4 md:w-4/5 w-auto">
+            <h3 className="text-2xl md:text-3xl my-4">
               Ready to book an appointment with a
               licensed physiotherapist?
             </h3>
@@ -72,32 +84,29 @@ export default function ContactUs() {
               member of our team will reach out to
               you shortly.
             </p>
-            <div className="flex flex-col xl-custom:flex-row gap-4 my-4">
-              <label >
-                Full Name
-              </label>
+            <div className="flex flex-col xl-custom:flex-row gap-4 my-4 items-center">
+              <label>Name</label>
               <input
                 type="text"
                 id="name"
-                className="border-2 border-green-800 rounded-md px-2 py-1"
+                className="border-2 border-green-950 rounded-md px-2 py-1"
+                placeholder="Enter Your Full Name"
               />
-              <label >
-                Phone Number
-              </label>
+              <label>Number</label>
               <input
                 type="telephone"
                 id="name"
-                className="border-2 border-green-800 rounded-md px-2 py-1 ml-1"
+                className="border-2 border-green-950 rounded-md px-2 py-1 ml-1"
+                placeholder="Phone Number"
               />
             </div>
             <div className="flex flex-col gap-4 my-4">
-              <label >
-                Email
-              </label>
+              <label>Email</label>
               <input
                 type="email"
                 id="email"
-                className="border-2 border-green-800 rounded-lg px-2 py-1 "
+                className="border-2 border-green-950 rounded-lg px-2 py-1 "
+                placeholder="Email"
               />
               <label>
                 Please describe your injury or
@@ -106,24 +115,23 @@ export default function ContactUs() {
               <textarea
                 name="describe"
                 id=""
-                className="border-2 border-green-800 rounded-md px-2 py-1"
-              >
-                Briefly describe why you need
-                physiotherapy
-              </textarea>
+                className="border-2 border-green-950 rounded-md px-2 py-1"
+                placeholder="Please describe your injury or concern"
+              ></textarea>
 
               <div className="flex flex-wrap gap-8">
                 <input
                   type="date"
-                  name="date"
-                  className="border-2 border-green-800 rounded-md px-2 py-1"
+                  id="datePicker"
+                  className="border-2 border-green-950 rounded-xl w-full px-4 py-2"
                 />
+
                 <input
                   min="12:00"
                   max="18:00"
                   type="time"
                   name="time"
-                  className="border-2 border-green-800 rounded-md px-2 py-1 "
+                  className="border-2 border-green-950 rounded-md px-2 py-1 "
                 />
               </div>
             </div>
