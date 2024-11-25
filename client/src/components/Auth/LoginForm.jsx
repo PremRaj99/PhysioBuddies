@@ -1,9 +1,11 @@
 import Button from "../Common/Button";
 import { Link } from "react-router-dom";
+import GoogleButton from "../Common/GoogleButton";
+import MetaButton from "../Common/MetaButton";
 
 export default function LoginForm() {
   return (
-    <div className="rounded-lg shadow-xl w-96  bg-white px-4 py-8">
+    <div className="rounded-lg shadow-xl w-auto md:w-4/5  bg-white px-4 py-8">
       <form
         action=""
         className="flex flex-col gap-4"
@@ -37,7 +39,7 @@ export default function LoginForm() {
             />
           </label>
         </div>
-        <div className="p-2">
+        <div className="p-4">
           <Button buttonText="Login" />
         </div>
         <p className="text-center text-gray-600">
@@ -58,6 +60,24 @@ export default function LoginForm() {
             Forgot Password?
           </Link>
         </p>
+        
+        <div className="">
+
+        <div className="flex items-center justify-center">
+          <div className="w-2/5">
+            <hr />
+          </div>
+          <span className="mx-4">or</span>
+          <div className="w-2/5">
+            <hr />
+          </div>
+        </div>
+
+        <div className="my-4 flex justify-center gap-4 items-center">
+          <GoogleButton />
+          <MetaButton />
+        </div>
+        </div>
       </form>
     </div>
   );

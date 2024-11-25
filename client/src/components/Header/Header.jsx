@@ -3,6 +3,7 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import logo from "../../assets/images/logo.png";
 import AppointmentButton from "../Common/AppointmentButton";
+import Button from "../Common/Button";
 
 export default function Header() {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -48,7 +49,8 @@ export default function Header() {
             </NavLink>
           ))}
         </nav>
-        <AppointmentButton/>
+
+        <Link to="/login" className="w-28 hidden md:block"><Button buttonText="Login" /></Link>
 
         {/* Mobile Menu Toggle */}
         <button

@@ -9,6 +9,9 @@ export default {
       screens: {
         "xl-custom": "1262px", // Custom breakpoint
       },
+      fontFamily: {
+        roboto: ["Roboto", "sans-serif"],
+      },
     },
   },
   plugins: [],

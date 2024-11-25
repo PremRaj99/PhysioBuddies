@@ -92,7 +92,7 @@ export default function ContactUs() {
                 type="text"
                 id="name"
                 className="flex-1 border-2 border-green-800 rounded-lg px-2 py-1"
-                placeholder="Full Name"
+                placeholder="Your Name"
               />
               <label>Phone Number</label>
               <input
