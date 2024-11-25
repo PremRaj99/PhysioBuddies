@@ -7,7 +7,7 @@ import scroll4 from "../../assets/images/scroll-4.png";
 
 export default function Hero() {
   return (
-    <div className="flex md:flex-row flex-col justify-center items-center px-4 md:px-8 lg:gap-32 lg:min-h-[calc(100vh-96px)] md:gap-4 bg-green-50 md:py-20 py-4 md:pb-0">
+    <div className="flex md:flex-row flex-col justify-center items-center px-4 md:px-8 lg:gap-32 lg:min-h-[calc(100vh-96px)] md:gap-4 bg-green-50 py-4">
       <div className="flex gap-2 scale-90 sm:scale-100 lg:scale-150 flex-nowrap p-4 md:p-8">
         {/* Section for animation */}
         <div
