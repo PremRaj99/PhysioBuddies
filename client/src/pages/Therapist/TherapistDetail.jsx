@@ -5,6 +5,7 @@ export default function TherapistDetail({
   specialization = "General Physician",
   experience = "10 years",
   about = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod illo, numquam consequatur ex voluptates dicta minus nobis, alias quae cum assumenda consequuntur voluptatibus odit, accusantium corrupti ratione. Voluptatem eius magnam illum quasi odit, nihil libero fugiat nostrum molestias quaerat adipisci nemo neque architecto, doloremque id corporis. Quidem in quaerat dolore eaque doloribus! ",
+  amount = 900
 }) {
   const relatedPhysiotherapists = [
     {
@@ -102,7 +103,7 @@ export default function TherapistDetail({
             <p className="text-gray-600 font-medium mt-4">
               Appointment fee:{" "}
               <span className="text-gray-800">
-                $50
+              ₹{amount}
               </span>{" "}
             </p>
           </div>

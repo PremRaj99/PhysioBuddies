@@ -155,17 +155,25 @@ export default function TherapistList() {
               <div className="flex text-gray-700">
                 <input
                   type="checkbox"
-                  name="gender"
-                  id="male"
+                  name="serviceModel"
+                  id="home"
                 />
                 <span className="mx-2">Home</span>
                 <input
                   type="checkbox"
-                  name="gender"
-                  id="male"
+                  name="serviceModel"
+                  id="clinic"
                 />
                 <span className="mx-2">
                   Clinic
+                </span>
+                <input
+                  type="checkbox"
+                  name="serviceModel"
+                  id="virtual"
+                />
+                <span className="mx-2">
+                  Virtual
                 </span>
               </div>
               <hr className="my-6" />

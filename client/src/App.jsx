@@ -12,6 +12,8 @@ import EditProfile from "./pages/Profile/EditProfile";
 import TherapistList from "./pages/Therapist/TherapistList";
 import ContactUs from "./pages/Contact/ContactUs";
 import TherapistDetail from "./pages/Therapist/TherapistDetail";
+import Login from "./pages/Auth/Login";
+import Signup from "./pages/Auth/Signup";
 
 
 export default function App() {
@@ -28,6 +30,9 @@ export default function App() {
         <Route path="/doctors" element={<TherapistList />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/doctors/preview" element={<TherapistDetail />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/forgotpassword" element={<Login />} />
       </Routes>
       <Footer />
     </Router>
