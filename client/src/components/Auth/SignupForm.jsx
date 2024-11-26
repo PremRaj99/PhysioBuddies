@@ -1,116 +1,168 @@
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Button from "../Common/Button";
+// import Button from "../Common/Button";
 import GoogleButton from "../Common/GoogleButton";
 import MetaButton from "../Common/MetaButton";
 
 export default function SignupForm() {
+  const [formData, setFormData] = useState({
+    fullName: "",
+    username: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Add your signup logic here
+  };
+
   return (
-    <div className="rounded-lg shadow-xl w-auto md:w-4/5 bg-white px-4 py-8 my-8">
-      <form
-        action=""
-        className="flex flex-col gap-1"
-      >
-        <h1 className="text-2xl font-bold text-center ">
-          Sign Up
-        </h1>
-
-        <p className="text-gray-600 p-2">
-          Please sign up to book appointment
-        </p>
-
-        <div className="p-2">
-          <label>
-            Full Name
-            <input
-              type="text"
-              id="name"
-              className="border-2 border-green-800 rounded-lg px-2 py-1 w-full"
-              placeholder="Your Name"
-            />
-          </label>
+    <div className="bg-green-50 flex items-center justify-center p-6">
+      <div className="w-full max-w-md bg-white shadow-2xl rounded-2xl overflow-hidden">
+        <div className="bg-green-800 text-white p-4 text-center">
+          <h2 className="text-3xl font-bold">Sign Up</h2>
+          <p className="text-green-100 mt-2">
+            Please sign up to book an appointment
+          </p>
         </div>
 
-        <div className="p-2">
-          <label>
-            Username
+        <form onSubmit={handleSubmit} className="p-6 flex flex-col text-sm gap-2">
+          <div className="">
+            <label
+              htmlFor="fullName"
+              className="block text-green-800 font-semibold"
+            >
+              Full Name
+            </label>
             <input
               type="text"
-              id="name"
-              className="border-2 border-green-800 rounded-lg px-2 py-1 w-full"
-              placeholder="Your Username"
+              id="fullName"
+              name="fullName"
+              value={formData.fullName}
+              onChange={handleChange}
+              className="w-full px-2 py-2 border-2 border-green-800 rounded-lg focus:outline-none focus:ring-0"
+              placeholder="Enter your full name"
+              required
             />
-          </label>
-        </div>
+          </div>
 
-        <div className="p-2">
-          <label>
-            Email
+          <div className="">
+            <label
+              htmlFor="username"
+              className="block text-green-800 font-semibold"
+            >
+              Username
+            </label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              value={formData.username}
+              onChange={handleChange}
+              className="w-full px-2 py-2 border-2 border-green-800 rounded-lg focus:outline-none focus:ring-0"
+              placeholder="Choose a username"
+              required
+            />
+          </div>
+
+          <div className="">
+            <label
+              htmlFor="email"
+              className="block text-green-800 font-semibold"
+            >
+              Email
+            </label>
             <input
               type="email"
               id="email"
-              className="border-2 border-green-800 rounded-lg px-2 py-1 w-full"
-              placeholder="your@email.com"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              className="w-full px-2 py-2 border-2 border-green-800 rounded-lg focus:outline-none focus:ring-0"
+              placeholder="Enter your email"
+              required
             />
-          </label>
-        </div>
+          </div>
 
-        <div className="flex flex-wrap">
-          <div className="p-2 md:w-1/2 w-full">
-            <label>
+          <div className="">
+            <label
+              htmlFor="password"
+              className="block text-green-800 font-semibold"
+            >
               Password
-              <input
-                type="password"
-                id="password"
-                className="border-2 border-green-800 rounded-lg px-2 py-1 w-full"
-                placeholder="********"
-              />
             </label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              className="w-full px-2 py-2 border-2 border-green-800 rounded-lg focus:outline-none focus:ring-0"
+              placeholder="Create a strong password"
+              required
+            />
           </div>
 
-          <div className="p-2 md:w-1/2 w-full">
-            <label>
+          <div className="">
+            <label
+              htmlFor="confirmPassword"
+              className="block text-green-800 font-semibold"
+            >
               Confirm Password
-              <input
-                type="password"
-                id="confirmPassword"
-                className="border-2 border-green-800 rounded-lg px-2 py-1 w-full"
-                placeholder="********"
-              />
             </label>
+            <input
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              value={formData.confirmPassword}
+              onChange={handleChange}
+              className="w-full px-2 py-2 border-2 border-green-800 rounded-lg focus:outline-none focus:ring-0"
+              placeholder="Confirm your password"
+              required
+            />
           </div>
-        </div>
 
-        <div className="p-4">
-          <Link to="/login">
-            <Button buttonText="Sign Up" />
-          </Link>
-        </div>
-
-        <p className="text-center">
-          Already have an account?{" "}
-          <Link
-            to="/login"
-            className="text-green-500"
+          <button
+            type="submit"
+            className="w-full bg-green-800 text-white py-[10px] px-8 my-2 rounded-lg hover:bg-green-700 transition duration-300 font-semibold"
           >
-            Login
-          </Link>
-        </p>
+            Create Account
+          </button>
 
-        <div className="flex items-center justify-center">
-          <div className="w-2/5">
-            <hr />
+          <div className="flex items-center justify-center gap-4">
+            <div className="border-t border-green-300 flex-grow"></div>
+            <span className="text-green-800 font-semibold">OR</span>
+            <div className="border-t border-green-300 flex-grow"></div>
           </div>
-          <span className="mx-4">or</span>
-          <div className="w-2/5">
-            <hr />
-          </div>
-        </div>
 
-        <div className="my-4 flex justify-center gap-4 items-center">
-          <GoogleButton />
-          <MetaButton />
-        </div>
-      </form>
+          <div className="flex flex-col items-center gap-2 text-sm">
+            <GoogleButton />
+            <MetaButton />
+          </div>
+
+          <div className="text-sm flex items-center justify-center gap-1 mt-2 text-green-800">
+            Already have an account?{" "}
+            <Link
+              to="/login"
+              className="font-medium hover:underline"
+            >
+              Login
+            </Link>
+          </div>
+        </form>
+      </div>
     </div>
   );
 }
+
+// export default SignupForm;

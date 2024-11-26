@@ -4,12 +4,10 @@ import loginIcon from "../../assets/images/LoginIcon.png";
 
 export default function Login() {
   return (
-    <div className="bg-green-50 h-auto md:h-[90vh] w-full flex flex-col md:flex-row justify-between items-center p-8 gap-4">
-      <div className="md:w-1/2 w-auto p-8">
-        <img src={loginIcon} alt="login Icon" className="w-4/6 mx-auto" />
-      </div>
-      <div className="md:w-1/2 w-auto ">
-        <LoginForm className="mx-auto"/>
+    <div className="bg-green-50 w-full flex flex-col md:flex-row justify-evenly items-center md:px-8 gap-8">
+        <img src={loginIcon} alt="login Icon" className="max-w-[30rem] w-1/2 hidden md:block" />
+      <div className="md:w-[30rem] w-full">
+        <LoginForm/>
       </div>
     </div>
   );
