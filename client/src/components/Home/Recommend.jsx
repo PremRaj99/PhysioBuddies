@@ -77,7 +77,7 @@ export default function Recommend() {
                 desc={recommendations.desc}
                 key={index}
                 navigate={() =>
-                  navigate("/doctor")
+                  navigate("/doctors")
                 }
               />
             )
