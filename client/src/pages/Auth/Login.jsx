@@ -13,6 +13,7 @@ export default function Login() {
       <div className="md:w-[30rem] w-full pb-8 my-16">
         <LoginForm />
       </div>
+      
     </div>
   );
 }
