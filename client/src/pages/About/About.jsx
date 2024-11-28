@@ -63,10 +63,9 @@ export default function About({
 
         {/* Figures */}
         <div
-          className="grid grid-cols-1 sm:grid-cols-2 gap-4 p-4"
+          className="grid grid-cols-2 sm:grid-cols-2 gap-4 p-4"
           style={{
-            fontFamily:
-              "'Brush Script MT', cursive",
+            fontFamily: "Poppins, sans-serif",
           }}
         >
           <div className="border-gray-800 w-full h-36 text-3xl flex flex-col justify-center items-center p-4">
