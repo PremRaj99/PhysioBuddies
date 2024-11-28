@@ -1,9 +1,9 @@
 import React from "react";
 
-function AppointmentButton() {
+function AppointmentButton({text="Book Appointment"}) {
   return (
-    <button className="hidden md:block px-4 py-2 rounded-full bg-green-600 hover:bg-green-700 text-white text-sm">
-      Book an Appointment
+    <button className=" w-full ease-in-out duration-300 bg-[#15415c] text-white px-6 py-5 rounded-full hover:text-[#15415c] hover:border hover:border-[#15415c] hover:bg-blue-50 text-xl md:text-base">
+      {text}
     </button>
   );
 }

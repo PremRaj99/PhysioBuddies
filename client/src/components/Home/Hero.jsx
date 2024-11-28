@@ -4,6 +4,9 @@ import scroll1 from "../../assets/images/scroll-1.png";
 import scroll2 from "../../assets/images/scroll-2.png";
 import scroll3 from "../../assets/images/scroll-3.png";
 import scroll4 from "../../assets/images/scroll-4.png";
+import Button from "../Common/Button";
+import AppointmentButton from "../Common/AppointmentButton";
+import { Link } from "react-router-dom";
 
 export default function Hero() {
   return (
@@ -71,7 +74,8 @@ export default function Hero() {
           Today and Take the First Step Toward
           Wellness!
         </h2>
-        <p className="text-w text-sm  max-w-[50ch]">
+
+        <p className="md:block hidden text-w text-sm  max-w-[50ch]">
           Are you struggling with pain, mobility
           issues, or recovering from an injury? At
           Physio Buddies, we specialize in
@@ -79,6 +83,11 @@ export default function Hero() {
           designed to help you regain strength,
           flexibility, and freedom.
         </p>
+        <div className="md:hidden block w-60  mt-4">
+          <Link to="/login">
+          <AppointmentButton text="Book Appointment" />
+          </Link>
+        </div>
       </div>
     </div>
   );
