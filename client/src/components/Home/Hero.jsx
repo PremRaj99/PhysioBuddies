@@ -7,7 +7,8 @@ import scroll4 from "../../assets/images/scroll-4.png";
 
 export default function Hero() {
   return (
-    <div className="flex md:flex-row flex-col justify-center items-center px-4 md:px-8 lg:gap-32 lg:min-h-[calc(100vh-96px)] md:gap-4 bg-green-50 py-4">
+    <div className="flex md:flex-row flex-col justify-center items-center px-4 md:px-8 lg:gap-32 lg:min-h-[calc(100vh-96px)] md:gap-4 bg-[#ecf6ff] text-black py-4">
+      {/* #ddebf9 */}
       <div className="flex gap-2 scale-90 sm:scale-100 lg:scale-150 flex-nowrap p-4 md:p-8">
         {/* Section for animation */}
         <div
@@ -59,17 +60,18 @@ export default function Hero() {
 
       {/* section for text */}
       <div className="flex flex-col md:items-start items-center text-center md:text-start gap-4 scale-75 md:scale-90 lg:scale-105">
-        <h1 className="text-green-800 font-bold text-5xl font-[SourGummy]">
+        <h1 className="text-[#15415c] font-bold text-5xl ">
+          {/* font-[SourGummy] */}
           Relieve Pain, <br />
-          Restore Movement,<br /> Revive
-          Your Life
+          Restore Movement,
+          <br /> Revive Your Life
         </h1>
-        <h2 className="text-gray-800  text-lg font-semibold w-[32ch]">
+        <h2 className="  text-lg font-semibold w-[32ch]">
           Book Your Physiotherapy Appointment
           Today and Take the First Step Toward
           Wellness!
         </h2>
-        <p className="text-gray-600 text-sm  max-w-[50ch]">
+        <p className="text-w text-sm  max-w-[50ch]">
           Are you struggling with pain, mobility
           issues, or recovering from an injury? At
           Physio Buddies, we specialize in

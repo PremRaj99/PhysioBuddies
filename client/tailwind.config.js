@@ -6,6 +6,11 @@ export default {
   ],
   theme: {
     extend: {
+      colors: {
+        "bg-primary": "#ecf6ff",
+        "bg-secondary": "#f6ffff",
+        "text-primary": "#15415c",
+      },
       screens: {
         "xl-custom": "1262px", // Custom breakpoint
       },

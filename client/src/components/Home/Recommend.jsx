@@ -55,28 +55,33 @@ export default function Recommend() {
       desc: "Comprehensive evaluations and sport-specific treatments enhance performance, prevent injuries, and promote optimal recovery for athletes.",
     },
   ];
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   return (
-    <div className="bg-yellow-50 p-2 pb-6 text-[#2D3342]">
+    <div className="bg-[#f6ffff] p-2 pb-6 text-[#2D3342]">
       <h2 className="text-center m-4 p-4 font-semibold md:text-3xl text-lg ">
         Need More Clarity on This !!!
       </h2>
       <div>
         <h3 className="font-medium text-center p-2 md:text-lg text-sm px-4">
-          Confused about what’s best for you? Let us guide you toward the
-          perfect solution for your health.
+          Confused about what’s best for you? Let
+          us guide you toward the perfect solution
+          for your health.
         </h3>
         <div className="flex flex-wrap py-2 gap-4 justify-center items-center">
-          {recommendations.map((recommendations, index) => (
-            <RecommendCard
-              img={recommendations.img}
-              title={recommendations.title}
-              desc={recommendations.desc}
-              key={index}
-              navigate = {()=>navigate('/doctor')}
-            />
-          ))}
+          {recommendations.map(
+            (recommendations, index) => (
+              <RecommendCard
+                img={recommendations.img}
+                title={recommendations.title}
+                desc={recommendations.desc}
+                key={index}
+                navigate={() =>
+                  navigate("/doctor")
+                }
+              />
+            )
+          )}
         </div>
       </div>
     </div>

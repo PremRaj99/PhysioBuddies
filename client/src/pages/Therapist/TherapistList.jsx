@@ -88,7 +88,7 @@ export default function TherapistList() {
   return (
     <div className="bg-green-50 ">
       {/* search bar */}
-      <div className="bg-green-600 h-40 flex flex-col justify-center items-center gap-2 shadow-md">
+      <div className="bg-text-primary h-40 flex flex-col justify-center items-center gap-2 shadow-md">
         <div className="w-full text-2xl text-white text-center font-semibold">
           Search Physio in your area
         </div>
@@ -108,29 +108,31 @@ export default function TherapistList() {
           </select>
         </div>
       </div>
+
       {/* Content for the therapist list goes here */}
-      <div className="bg-green-50 flex flex-col md:flex-row">
+      <div className="bg-bg-primary flex flex-col md:flex-row">
         {/* Sidebar for small devices*/}
         <div className="md:hidden flex p-4 justify-between mx-4 text-gray-800 text-xl">
           <div className="">Filter</div>
           <FaFilter className="w-8 h-8" />
         </div>
+
         {/* sidebar */}
         <div className="hidden md:block md:w-[30%] md:h-full p-8">
-          <div className="bg-yellow-50 h-full w-full rounded-lg shadow-lg p-4">
+          <div className="bg-bg-secondary h-full w-full rounded-lg shadow-lg p-4">
             <form>
               <label>Gender</label>
-              <div className="flex text-gray-700">
+              <div className="flex text-gray-700 my-4">
                 <input
                   type="radio"
                   name="gender"
-                  id="male"
+                  id="maleTherapistInput"
                 />
                 <span className="mx-2">Male</span>
                 <input
                   type="radio"
                   name="gender"
-                  id="male"
+                  id="femaleTherapistInput"
                 />
                 <span className="mx-2">
                   Female
@@ -139,12 +141,14 @@ export default function TherapistList() {
               <hr className="my-6" />
 
               <label>Speciality</label>
-              <div className="flex flex-col gap-3 text-gray-700">
+              <div className="flex flex-col gap-3 text-gray-700 my-4">
                 {filterSpeciality.map(
                   (speciality) => (
                     <span className="flex items-center my-1">
                       <input type="checkbox" />
-                      <span className="mx-2">{speciality}</span>
+                      <span className="mx-2">
+                        {speciality}
+                      </span>
                     </span>
                   )
                 )}
@@ -152,7 +156,7 @@ export default function TherapistList() {
               <hr className="my-6" />
 
               <label>Model</label>
-              <div className="flex text-gray-700">
+              <div className="flex text-gray-700 my-4">
                 <input
                   type="checkbox"
                   name="serviceModel"
@@ -177,9 +181,41 @@ export default function TherapistList() {
                 </span>
               </div>
               <hr className="my-6" />
+              <label>Experience</label>
+              <div className="flex flex-col gap-3 text-gray-700 my-4">
+                <span className="flex items-center my-1">
+                  <input
+                    type="radio"
+                    name="therapistExperience"
+                  />
+                  <span className="mx-2">
+                    0-5 years
+                  </span>
+                </span>
+                <span className="flex items-center my-1">
+                  <input
+                    type="radio"
+                    name="therapistExperience"
+                  />
+                  <span className="mx-2">
+                    5-10 years
+                  </span>
+                </span>
+                <span className="flex items-center my-1">
+                  <input
+                    type="radio"
+                    name="therapistExperience"
+                  />
+                  <span className="mx-2">
+                    10+ years
+                  </span>
+                </span>
+              </div>
+              <hr className="my-6" />
             </form>
           </div>
         </div>
+
         {/* Therapist List */}
         <div className="flex gap-12 md:gap-8 flex-wrap justify-center md:justify-start items-center py-4 px-6 mx-4 mt-5">
           {physiotherapists.map((therapist) => (

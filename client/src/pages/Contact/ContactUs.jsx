@@ -17,19 +17,19 @@ export default function ContactUs() {
 
   return (
     <>
-      <h2 className="text-2xl font-semibold text-green-950 text-center bg-green-50 pb-8">
+      <h2 className="text-2xl font-semibold text-text-primary text-center bg-bg-secondary pb-8">
         Contact Us
       </h2>
 
       {/* Contact Form */}
-      <div className="bg-green-50 flex flex-wrap justify-center ">
+      <div className="bg-bg-secondary flex flex-wrap justify-center ">
         {/* Text Sention */}
-        <div className="bg-green-100 w-auto md:w-1/2 pr-8 py-4 md:pl-16 pl-8 text-gray-800">
+        <div className="bg-bg-primary w-auto md:w-1/2 pr-8 py-4 md:pl-16 pl-8 text-gray-800">
           {/* <div className="w-auto md:w-4/5"></div> */}
           <h1 className="text-xl text-gray-700">
             BOOK ONLINE
           </h1>
-          <h2 className="md:text-3xl text-2xl my-4 text-green-950 font-[SourGummy]">
+          <h2 className="md:text-3xl text-2xl my-4  font-[SourGummy]">
             Relieve Pain, Restore Movement, Revive
             Your Life
           </h2>
@@ -77,7 +77,7 @@ export default function ContactUs() {
         {/* Form Section */}
         <div className="w-auto md:w-1/2 px-8 py-2">
           <form className="text-gray-800 w-auto md:w-4/5">
-            <h3 className="text-xl md:text-2xl text-green-950 my-8">
+            <h3 className="text-xl md:text-2xl text-text-primary my-8">
               Ready to book an appointment with a
               licensed physiotherapist?
             </h3>
@@ -91,14 +91,14 @@ export default function ContactUs() {
               <input
                 type="text"
                 id="name"
-                className="flex-1 border-2 border-green-800 rounded-lg px-2 py-1"
+                className="flex-1 border-2 border-text-primary rounded-lg px-2 py-1"
                 placeholder="Your Name"
               />
               <label>Phone Number</label>
               <input
                 type="telephone"
                 id="name"
-                className="flex-1 border-2 border-green-800 rounded-lg px-2 py-1 ml-1"
+                className="flex-1 border-2 border-text-primary rounded-lg px-2 py-1 ml-1"
                 placeholder="+91 **********"
               />
             </div>
@@ -107,7 +107,7 @@ export default function ContactUs() {
               <input
                 type="email"
                 id="email"
-                className="border-2 border-green-800 rounded-lg px-2 py-1 w-full"
+                className="border-2 border-text-primary rounded-lg px-2 py-1 w-full"
                 placeholder="your@email.com"
               />
               <label>
@@ -117,24 +117,9 @@ export default function ContactUs() {
               <textarea
                 name="describe"
                 id=""
-                className="border-2 border-green-800 rounded-lg px-2 py-1"
+                className="border-2 border-text-primary rounded-lg px-2 py-1"
                 placeholder="Briefly describe why you need physiotherapy"
               />
-              <div className="flex flex-row gap-4">
-                <input
-                  type="date"
-                  id="datePicker"
-                  className="border-2 border-green-950 rounded-lg w-1/2 px-4 py-2"
-                />
-
-                <input
-                  min="12:00"
-                  max="18:00"
-                  type="time"
-                  name="time"
-                  className="border-2 border-green-950 w-1/2 rounded-lg px-2 py-1 "
-                />
-              </div>
             </div>
             <div className="flex justify-center my-8 p-2">
               <Button buttonText="Submit" />

@@ -38,10 +38,10 @@ export default function TherapistItemCard({
       <img
         src={profilePhoto}
         alt=""
-        className="object-cover w-56 bg-green-500"
+        className="object-cover w-56 bg-bg-primary"
       />
       <div className="p-4">
-        <div className="flex items-center gap-2 text-sm text-center text-green-500">
+        <div className="flex items-center gap-2 text-sm text-center text-text-primary font-semibold">
           {isAvailable && (
             <p className="w-2 h-2 rounded-full bg-green-500"></p>
           )}
@@ -58,7 +58,7 @@ export default function TherapistItemCard({
         </p>
         <div className="flex items-center gap-2  text-yellow-400">
           {/* stars logic yet to implement */}
-          
+
           <StarRating rating={rating} />
           <p className="text-[#5C5C5C]">
             {reviewCount} reviews

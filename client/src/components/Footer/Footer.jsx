@@ -24,7 +24,7 @@ export default function Footer() {
       <footer>
         {/* Footer Upper Section */}
 
-        <div className="relative -bottom-16 flex lg:flex-row flex-col items-center justify-center gap-10 bg-green-50 rounded-xl lg:mx-40 mx-8 px-8 pt-10 md:pt-0 mt-6 md:px-32">
+        <div className="relative -bottom-16 flex lg:flex-row flex-col items-center justify-center gap-10 bg-[#fff9e9] rounded-xl lg:mx-40 mx-8 px-8 pt-10 md:pt-0 mt-6 md:px-32 shadow-xl">
           <div className="flex flex-col gap-4 items-center lg:items-start flex-1">
             <h2 className="text-3xl font-semibold">
               Contact Us
@@ -36,21 +36,21 @@ export default function Footer() {
               advice, we're here to help. Reach
               out to our friendly team today.
             </p>
-            <button className="px-4 w-full md:w-fit md:px-16 py-2 bg-green-600 text-white rounded-full text-sm">
+            <button className="px-4 w-full md:w-fit md:px-16 py-2 bg-[#1a3e57] text-white rounded-full text-sm">
               Contact Us
             </button>
           </div>
           <div className="flex-1 h-72 flex items-end justify-center">
             <img
               src={img}
-              className="w-[300px]"
+              className="w-[150px] md:w-[300px]"
               alt=""
             />
           </div>
           {/* <div className="flex-1"></div> */}
         </div>
 
-        <div className="bg-yellow-50 flex flex-wrap w-full justify-evenly py-12 pt-24 px-10 leading-6">
+        <div className="bg-bg-primary flex flex-wrap w-full justify-evenly py-12 pt-24 px-10 leading-6">
           {/* Logo and Description */}
           <div className="flex flex-col gap-4">
             <img

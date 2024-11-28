@@ -4,7 +4,7 @@ import "tailwindcss/tailwind.css";
 
 const Carousel = ({ text }) => {
   return (
-    <div className="relative overflow-hidden bg-green-500 text-white">
+    <div className="relative overflow-hidden bg-text-primary text-white">
       <div className="whitespace-nowrap animate-marquee">
         <span className="inline-block px-4 py-2 text-normal md:text-3xl font-[SourGummy]">
           {text}

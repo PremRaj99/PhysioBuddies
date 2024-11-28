@@ -20,7 +20,8 @@ const Human = () => {
   
 
   return (
-    <div className="bg-green-50">
+    <div className="bg-[#CAF0F8]">
+      {/* #e8fbfb */}
       <div className="text-3xl text-center font-[SourGummy]">
         Tell Us Where is Hurts
       </div>
@@ -159,7 +160,7 @@ const Human = () => {
           </div>
 
           <div className="px-4 ">
-            <button className="bg-green-500 rounded-sm p-3 flex items-center">
+            <button className="bg-red-600 text-white rounded-sm p-3 flex items-center">
               Continue
               <FaArrowRight className="ml-2" />
             </button>

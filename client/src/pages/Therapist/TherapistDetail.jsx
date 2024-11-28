@@ -5,7 +5,7 @@ export default function TherapistDetail({
   specialization = "General Physician",
   experience = "10 years",
   about = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod illo, numquam consequatur ex voluptates dicta minus nobis, alias quae cum assumenda consequuntur voluptatibus odit, accusantium corrupti ratione. Voluptatem eius magnam illum quasi odit, nihil libero fugiat nostrum molestias quaerat adipisci nemo neque architecto, doloremque id corporis. Quidem in quaerat dolore eaque doloribus! ",
-  amount = 900
+  amount = 900,
 }) {
   const relatedPhysiotherapists = [
     {
@@ -67,12 +67,12 @@ export default function TherapistDetail({
   ];
 
   return (
-    <div className="p-8">
+    <div className="p-8 bg-bg-primary">
       <div>
         <div className="flex flex-wrap justify-center gap-4 ">
-          <div className="rounded-lg w-72">
+          <div className="rounded-lg shadow-lg w-72">
             <img
-              className="bg-green-400 w-full sm:max-w-72 rounded-lg"
+              className="bg-bg-secondary w-full sm:max-w-72 rounded-lg"
               src="https://raw.githubusercontent.com/avinashdm/gs-images/main/prescripto/doc1.png"
               alt=""
             />
@@ -103,7 +103,7 @@ export default function TherapistDetail({
             <p className="text-gray-600 font-medium mt-4">
               Appointment fee:{" "}
               <span className="text-gray-800">
-              ₹{amount}
+                ₹{amount}
               </span>{" "}
             </p>
           </div>
@@ -118,7 +118,7 @@ export default function TherapistDetail({
             Simply browse through our extensive
             list of trusted doctors.
           </p>
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-4 md:justify-start justify-center">
             {relatedPhysiotherapists.map(
               (physiotherapist) => (
                 <TherapistItemCard
