@@ -24,20 +24,25 @@ export default function LoginForm() {
   };
 
   return (
-    <div className="bg-green-50 flex items-center justify-center p-6">
-      <div className="w-full max-w-md bg-white shadow-2xl rounded-2xl overflow-hidden">
-        <div className="bg-green-800 text-white p-4 text-center">
-          <h2 className="text-3xl font-bold">Login</h2>
-          <p className="text-green-100 mt-2">
+    <div className="flex items-center justify-center p-6">
+      <div className="w-full max-w-md  bg-white shadow-2xl rounded-2xl overflow-hidden">
+        <div className=" text-white p-4 bg-text-primary text-center">
+          <h2 className="text-3xl font-bold">
+            Login
+          </h2>
+          <p className=" mt-2">
             Please log in to book an appointment
           </p>
         </div>
 
-        <form onSubmit={handleSubmit} className="p-6 flex flex-col text-sm gap-2">
+        <form
+          onSubmit={handleSubmit}
+          className="p-6 flex flex-col text-sm gap-2"
+        >
           <div className="">
             <label
               htmlFor="email"
-              className="block text-green-800 font-semibold"
+              className="block text-text-primary font-semibold"
             >
               Email
             </label>
@@ -47,7 +52,7 @@ export default function LoginForm() {
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full px-2 py-2 border-2 border-green-800 rounded-lg focus:outline-none focus:ring-0"
+              className="w-full px-2 py-2 border-2 border-text-primary rounded-lg focus:outline-none focus:ring-0"
               placeholder="your@email.com"
               required
             />
@@ -56,7 +61,7 @@ export default function LoginForm() {
           <div className="">
             <label
               htmlFor="password"
-              className="block text-green-800 font-semibold"
+              className="block text-text-primary font-semibold"
             >
               Password
             </label>
@@ -66,7 +71,7 @@ export default function LoginForm() {
               name="password"
               value={formData.password}
               onChange={handleChange}
-              className="w-full px-2 py-2 border-2 border-green-800 rounded-lg focus:outline-none focus:ring-0"
+              className="w-full px-2 py-2 border-2 border-text-primary rounded-lg focus:outline-none focus:ring-0"
               placeholder="********"
               required
             />
@@ -75,7 +80,7 @@ export default function LoginForm() {
           <div className="text-right mt-1">
             <Link
               to="/forgotpassword"
-              className="text-green-800 text-sm hover:underline"
+              className="text-text-primary text-sm hover:underline"
             >
               Forgot Password?
             </Link>
@@ -83,15 +88,17 @@ export default function LoginForm() {
 
           <button
             type="submit"
-            className="w-full bg-green-800 text-white py-[10px] px-8 my-2 rounded-lg hover:bg-green-700 transition duration-300 font-semibold"
+            className="w-full bg-text-primary text-white py-[10px] px-8 my-2 rounded-lg hover:bg-text-primary transition duration-300 font-semibold"
           >
             Login
           </button>
 
           <div className="flex items-center justify-center gap-4">
-            <div className="border-t border-green-300 flex-grow"></div>
-            <span className="text-green-800 font-semibold">OR</span>
-            <div className="border-t border-green-300 flex-grow"></div>
+            <div className="border-t border-text-primary flex-grow"></div>
+            <span className="text-text-primary font-semibold">
+              OR
+            </span>
+            <div className="border-t border-text-primary flex-grow"></div>
           </div>
 
           <div className="flex flex-col items-center gap-2 text-sm">
@@ -99,7 +106,7 @@ export default function LoginForm() {
             <MetaButton />
           </div>
 
-          <div className="text-sm flex items-center justify-center gap-1 mt-2 text-green-800">
+          <div className="text-sm flex items-center justify-center gap-1 mt-2 text-text-primary">
             Don't have an account?{" "}
             <Link
               to="/signup"
