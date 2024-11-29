@@ -111,9 +111,9 @@ export default function TherapistDetail({
 
         {/* Related Doctors Section */}
         <div className="flex flex-col items-center gap-4 my-16 text-[#262626]">
-          <h1 className="text-3xl font-medium">
+          <div className="text-3xl font-medium">
             Related Doctors
-          </h1>
+          </div>
           <p className="sm:w-1/3 text-center text-sm">
             Simply browse through our extensive
             list of trusted doctors.
