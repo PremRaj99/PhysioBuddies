@@ -15,6 +15,7 @@ import TherapistDetail from "./pages/Therapist/TherapistDetail";
 import Login from "./pages/Auth/Login";
 import Signup from "./pages/Auth/Signup";
 import ScrollToTop from "./components/ScrollToTop";
+import AddBlog from "./pages/Blog/AddBlog";
 
 export default function App() {
   return (
@@ -34,6 +35,7 @@ export default function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/forgotpassword" element={<Login />} />
+        <Route path="/dashboard/addblog" element={<AddBlog />} />
       </Routes>
       <Footer />
     </Router>

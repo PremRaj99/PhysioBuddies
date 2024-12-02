@@ -74,7 +74,7 @@ export default function TestimonialCourosal() {
         breakpoint: 1024,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToScroll: 1,
           infinite: true,
           dots: true,
         },
@@ -96,10 +96,10 @@ export default function TestimonialCourosal() {
       },
     ],
     autoplay: true,
-    autoplaySpeed: 3000,
-    // cssEase: "linear",
+    autoplaySpeed: 2000,
     infinite: true,
   };
+
   return (
     <div className="bg-bg-primary py-8 px-8 md:px-16 ">
       <div className="text-center font-bold text-2xl mt-4 mb-8">

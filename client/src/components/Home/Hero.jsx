@@ -1,16 +1,11 @@
 import React from "react";
-import "./Hero.css";
-import scroll1 from "../../assets/images/scroll-1.png";
-import scroll2 from "../../assets/images/scroll-2.png";
-import scroll3 from "../../assets/images/scroll-3.png";
-import scroll4 from "../../assets/images/scroll-4.png";
+import { Link } from "react-router-dom";
 import newScroll1 from "../../assets/images/new-scroll-1.png";
 import newScroll2 from "../../assets/images/new-scroll-2.png";
 import newScroll3 from "../../assets/images/new-scroll-3.png";
 import newScroll4 from "../../assets/images/new-scroll-4.png";
-import Button from "../Common/Button";
 import AppointmentButton from "../Common/AppointmentButton";
-import { Link } from "react-router-dom";
+import "./Hero.css";
 
 export default function Hero() {
   return (

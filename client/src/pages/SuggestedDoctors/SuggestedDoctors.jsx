@@ -1,5 +1,6 @@
 import React from "react";
 import CenterMode from "../../components/Corousal/CenterMode";
+import TestimonialCourosal from "../Testimonial/TestimonialCourosal";
 
 export default function SuggestedDoctors() {
   const SuggestedDoctors = [
@@ -61,13 +62,14 @@ export default function SuggestedDoctors() {
     },
   ];
   return (
-    <div className="bg-bg-secondary flex flex-col items-center gap-8 p-4">
+    <div className="bg-bg-secondary  flex flex-col items-center gap-8 p-4">
       <div className="text-3xl font-medium py-4">
         Our Team of{" "}
-        <span className="text-text-primary">Expert Physiotherapists</span>
+        <span className="text-teal-600">
+          Expert Physiotherapists
+        </span>
       </div>
       {/* <CenterMode/> */}
-     
     </div>
   );
 }
