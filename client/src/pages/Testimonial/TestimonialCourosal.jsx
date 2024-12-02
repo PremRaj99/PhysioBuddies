@@ -1,9 +1,8 @@
 import React from "react";
-import TestimonialCard from "./TestimonialCard";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { IoArrowForwardCircleSharp } from "react-icons/io5";
+import "slick-carousel/slick/slick.css";
+import TestimonialCard from "./TestimonialCard";
 
 export default function TestimonialCourosal() {
   const testimonialData = [
@@ -96,7 +95,7 @@ export default function TestimonialCourosal() {
       },
     ],
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 3000,
     infinite: true,
   };
 
@@ -107,22 +106,26 @@ export default function TestimonialCourosal() {
       </div>
       <Slider
         {...settings}
-        className="px-1 "
+        className="px-1 flex justify-center items-center gap-4"
       >
         {testimonialData.map(
           (testimonial, index) => (
-            <TestimonialCard
-              condition={testimonial.condition}
-              testimonial={
-                testimonial.testimonial
-              }
-              name={testimonial.name}
-              age={testimonial.age}
-              occupation={testimonial.occupation}
-              location={testimonial.location}
-              img={testimonial.img}
-              rating={testimonial.rating}
-            />
+            
+              <TestimonialCard
+                key={index}
+                condition={testimonial.condition}
+                testimonial={
+                  testimonial.testimonial
+                }
+                name={testimonial.name}
+                age={testimonial.age}
+                occupation={
+                  testimonial.occupation
+                }
+                location={testimonial.location}
+                img={testimonial.img}
+                rating={testimonial.rating}
+              />
           )
         )}
       </Slider>

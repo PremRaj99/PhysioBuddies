@@ -1,0 +1,3 @@
+.slick-next:before, .slick-prev:before {
+    @apply text-text-primary;
+}

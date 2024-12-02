@@ -114,7 +114,7 @@ export default function TherapistList() {
         {/* Sidebar for small devices*/}
         <div className="md:hidden flex p-4 justify-between mx-4 text-gray-800 text-xl">
           <div className="">Filter</div>
-          <FaFilter className="w-8 h-8" />
+          <FaFilter className="w-6 h-6" />
         </div>
 
         {/* sidebar */}
@@ -217,7 +217,7 @@ export default function TherapistList() {
         </div>
 
         {/* Therapist List */}
-        <div className="flex gap-12 md:gap-8 flex-wrap justify-center md:justify-start items-center py-4 px-6 mx-4 mt-5">
+        <div className="flex gap-5 md:gap-8 flex-wrap justify-center md:justify-start items-center py-4 px-2 md:px-6 md:mx-4 mx-0 mt-5">
           {physiotherapists.map((therapist) => (
             <TherapistItemCard
               profilePhoto={

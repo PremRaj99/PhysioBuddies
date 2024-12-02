@@ -6,17 +6,23 @@ import Corousel from "../../components/Common/Corousel";
 import ConditionsWeTreat from "../ConditionsWeTreat/ConditionsWeTreat.jsx";
 import TestimonialCourosal from "../Testimonial/TestimonialCourosal.jsx";
 import SuggestedDoctors from "../SuggestedDoctors/SuggestedDoctors.jsx";
+import RecommendCard from "../../components/Common/RecommendCard.jsx";
+import RecommendCorousal from "../../components/Home/RecommendCorousal.jsx";
 
 export default function Home() {
   return (
     <div>
       <Hero />
       {/* <Human /> */}
-      {/* <Corousel text="✦ Explore our blog, discover health's beauty and benefits" /> */}
-      <Recommend />
+      <div className="hidden sm:block">
+        <Recommend />
+      </div>
+      <div className="block sm:hidden">
+        <RecommendCorousal/>
+      </div>
       {/* <ConditionsWeTreat /> */}
-      <TestimonialCourosal/>
-      <SuggestedDoctors/>
+      <TestimonialCourosal />
+      <SuggestedDoctors />
     </div>
   );
 }
