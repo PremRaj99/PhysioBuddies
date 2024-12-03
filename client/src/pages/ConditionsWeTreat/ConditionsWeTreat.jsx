@@ -29,7 +29,7 @@ export default function ConditionsWeTreat() {
       ],
     },
     {
-      icons: geriatrics,
+      icons: paedatrics,
       name: "Paedatrics",
       desc: [
         "Geriatrics focuses on elderly healthcare",
@@ -45,7 +45,7 @@ export default function ConditionsWeTreat() {
       "Advanced care improves sports performance and health",
     ] },
     {
-      icons: paedatrics,
+      icons: geriatrics,
       name: "Geriatrics",
       desc: [
         "Paediatrics focuses on child healthcare",
@@ -56,6 +56,7 @@ export default function ConditionsWeTreat() {
     },
     { icons: neuro, name: "name", desc: "" },
   ];
+  
   return (
     <div className="p-4 bg-bg-primary">
       <div className="text-center font-bold text-2xl">

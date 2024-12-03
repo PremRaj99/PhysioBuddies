@@ -19,7 +19,7 @@ export default function Footer() {
   return (
     <>
       {/* Banner */}
-      <Corousel text="✦ Explore our blog, discover health's beauty and benefits" />
+      <Corousel text="✦ Your Recovery, Our Mission" />
 
       <footer>
         {/* Footer Upper Section */}
