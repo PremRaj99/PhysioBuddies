@@ -15,7 +15,7 @@ export default function TestimonialCard({
       testimonial.substring(0, 80) + "...";
   }
   return (
-    <div className="bg-bg-secondary rounded-lg shadow-xl m-2 h-[500px] md:h-auto">
+    <div className="bg-bg-primary rounded-lg shadow-xl m-2 h-[500px] md:h-auto">
       <div className="text-xl bg-text-primary text-white text-center py-2 rounded-t-lg">
         {condition}
       </div>

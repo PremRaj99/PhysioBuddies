@@ -97,7 +97,7 @@ export default function SuggestedDoctors() {
   var settings = {
     dots: true,
     speed: 2000,
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 1,
     initialSlide: 0,
 
@@ -105,7 +105,7 @@ export default function SuggestedDoctors() {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 4,
           slidesToScroll: 1,
           infinite: true,
           dots: true,

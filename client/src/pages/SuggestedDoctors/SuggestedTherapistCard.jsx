@@ -13,7 +13,7 @@ export default function SuggestedTherapistCard({
         <img
           src={profilePhoto}
           alt="img"
-          className="object-cover rounded-2xl w-full h-96 "
+          className="object-cover rounded-2xl w-full md:h-96 h-64"
         />
       </div>
       <div className="">
