@@ -16,6 +16,7 @@ import Login from "./pages/Auth/Login";
 import Signup from "./pages/Auth/Signup";
 import ScrollToTop from "./components/ScrollToTop";
 import AddBlog from "./pages/Blog/AddBlog";
+import Dashboard from "./pages/Dashboard/Dashboard";
 
 export default function App() {
   return (
@@ -36,6 +37,7 @@ export default function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/forgotpassword" element={<Login />} />
         <Route path="/dashboard/addblog" element={<AddBlog />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
       <Footer />
     </Router>

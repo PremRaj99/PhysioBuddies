@@ -68,6 +68,7 @@ export default function TestimonialCourosal() {
     slidesToShow: 3,
     slidesToScroll: 1,
     initialSlide: 0,
+    arrows: false,
     responsive: [
       {
         breakpoint: 1024,
@@ -100,7 +101,7 @@ export default function TestimonialCourosal() {
   };
 
   return (
-    <div className="bg-bg-secondary py-8 px-8 md:px-16">
+    <div className="bg-bg-secondary py-8 px-8 md:px-40">
       <div className="text-center font-bold text-2xl mt-4 mb-8">
         What our patients say{" "}
       </div>

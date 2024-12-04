@@ -135,7 +135,7 @@ export default function SuggestedDoctors() {
   };
 
   return (
-    <div className="bg-bg-primary py-8 px-8 md:px-16">
+    <div className="bg-bg-primary py-8 px-8 md:px-40">
       <div className="text-center font-bold text-2xl mt-4 mb-8">
         Our Team of{" "}
         <span className="text-teal-600">

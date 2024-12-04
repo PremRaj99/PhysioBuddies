@@ -14,3 +14,9 @@
   src:
     url("../assets/fonts/SourGummy.ttf")
 }
+
+@layer base {
+  :root {
+        --radius: 0.5rem;
+    }
+}

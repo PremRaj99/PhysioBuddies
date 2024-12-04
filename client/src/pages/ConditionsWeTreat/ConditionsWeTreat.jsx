@@ -22,28 +22,33 @@ export default function ConditionsWeTreat() {
       icons: neuro,
       name: "Neurological",
       desc: [
-        "Neurology focuses on brain and nerve disorders.",
-        "It treats conditions like epilepsy and stroke",
-        "Neurologists diagnose and manage complex diseases",
-        "Advanced care improves patient neurological health",
+        "Stroke",
+        "Parkinson's / Alzheimer's",
+        "Multiple Sclerosis",
+        "Muscular Dystrophy",
+        "Cerebral-palsy",
       ],
     },
     {
       icons: paedatrics,
       name: "Paedatrics",
       desc: [
-        "Geriatrics focuses on elderly healthcare",
-        "It addresses age-related diseases and conditions",
-        "Specialists manage chronic illnesses and frailty",
-        "Improved care enhances seniors' quality of life",
+        "Recovery after C-Section",
+        "Weight-loss for New Moms",
+        "Lactation Counselling",
+        "Postpartum Depression",
       ],
     },
-    { icons: sports, name: "Sports", desc: [
-      "Sports medicine treats sports-related injuries",
-      "It focuses on prevention and rehabilitation",
-      "Specialists help athletes recover and perform better",
-      "Advanced care improves sports performance and health",
-    ] },
+    {
+      icons: sports,
+      name: "Sports",
+      desc: [
+        "Sports medicine treats sports-related injuries",
+        "It focuses on prevention and rehabilitation",
+        "Specialists help athletes recover and perform better",
+        "Advanced care improves sports performance and health",
+      ],
+    },
     {
       icons: geriatrics,
       name: "Geriatrics",
@@ -56,12 +61,12 @@ export default function ConditionsWeTreat() {
     },
     { icons: neuro, name: "name", desc: "" },
   ];
-  
+
   return (
     <div className="p-4 bg-bg-primary">
-      <div className="text-center font-bold text-2xl">
+      <h2 className="text-center font-bold text-2xl py-4">
         Conditions We Treat
-      </div>
+      </h2>
 
       <div className="mt-5 grid grid-cols-2 md:grid-cols-3 md:gap-8 gap-1 w-auto md:w-4/5 mx-auto">
         {condtions.map((condition) => (
