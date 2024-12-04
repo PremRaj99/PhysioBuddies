@@ -8,7 +8,7 @@ import TestimonialCourosal from "../Testimonial/TestimonialCourosal.jsx";
 import SuggestedDoctors from "../SuggestedDoctors/SuggestedDoctors.jsx";
 import RecommendCard from "../../components/Common/RecommendCard.jsx";
 import RecommendCorousal from "../../components/Home/RecommendCorousal.jsx";
-import WhyChooseUs from "../WhyChooseus/WhyChooseUs.jsx";
+import WhyChooseUs from "../WhyChooseUs/WhyChooseUs";
 
 export default function Home() {
   return (
@@ -19,11 +19,11 @@ export default function Home() {
         <Recommend />
       </div>
       <div className="block sm:hidden">
-        <RecommendCorousal/>
+        <RecommendCorousal />
       </div>
       <ConditionsWeTreat />
       <TestimonialCourosal />
-      <WhyChooseUs/>
+      <WhyChooseUs />
       <SuggestedDoctors />
     </div>
   );
