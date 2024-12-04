@@ -1,16 +1,15 @@
 import React from "react";
-import "./Hero.css";
-import scroll1 from "../../assets/images/scroll-1.png";
-import scroll2 from "../../assets/images/scroll-2.png";
-import scroll3 from "../../assets/images/scroll-3.png";
-import scroll4 from "../../assets/images/scroll-4.png";
-import Button from "../Common/Button";
-import AppointmentButton from "../Common/AppointmentButton";
 import { Link } from "react-router-dom";
+import newScroll1 from "../../assets/images/new-scroll-1.png";
+import newScroll2 from "../../assets/images/new-scroll-2.png";
+import newScroll3 from "../../assets/images/new-scroll-3.png";
+import newScroll4 from "../../assets/images/new-scroll-4.png";
+import AppointmentButton from "../Common/AppointmentButton";
+import "./Hero.css";
 
 export default function Hero() {
   return (
-    <div className="flex md:flex-row flex-col justify-center items-center px-4 md:px-8 lg:gap-32 lg:min-h-[calc(100vh-96px)] md:gap-4 bg-[#ecf6ff] text-black py-4">
+    <div className="flex md:flex-row flex-col justify-center items-center px-4 md:px-8 lg:gap-32 lg:min-h-[calc(100vh-96px)] md:gap-4 bg-bg-primary text-black py-4">
       {/* #ddebf9 */}
       <div className="flex gap-2 scale-90 sm:scale-100 lg:scale-150 flex-nowrap p-4 md:p-8">
         {/* Section for animation */}
@@ -20,7 +19,7 @@ export default function Hero() {
         >
           <div className="scroll-text delay-0">
             <img
-              src={scroll1}
+              src={newScroll1}
               alt="Scroll 1"
             />
           </div>
@@ -31,7 +30,7 @@ export default function Hero() {
         >
           <div className="scroll-text delay-1">
             <img
-              src={scroll2}
+              src={newScroll2}
               alt="Scroll 2"
             />
           </div>
@@ -42,7 +41,7 @@ export default function Hero() {
         >
           <div className="scroll-text delay-2">
             <img
-              src={scroll3}
+              src={newScroll3}
               alt="Scroll 3"
             />
           </div>
@@ -53,7 +52,7 @@ export default function Hero() {
         >
           <div className="scroll-text delay-3">
             <img
-              src={scroll4}
+              src={newScroll4}
               alt="Scroll 4"
             />
           </div>
@@ -85,7 +84,7 @@ export default function Hero() {
         </p>
         <div className="md:hidden block w-60  mt-4">
           <Link to="/login">
-          <AppointmentButton text="Book Appointment" />
+            <AppointmentButton text="Book Appointment" />
           </Link>
         </div>
       </div>

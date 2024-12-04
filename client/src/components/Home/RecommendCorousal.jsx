@@ -1,8 +1,12 @@
 import React from "react";
+import {
+  Link,
+  useNavigate,
+} from "react-router-dom";
 import RecommendCard from "../Common/RecommendCard";
-import { useNavigate } from "react-router-dom";
+import Slider from "react-slick";
 
-export default function Recommend() {
+export default function RecommendCorousal() {
   const recommendations = [
     {
       img: "https://plus.unsplash.com/premium_photo-1725576700671-28f9113cafa0?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -56,33 +60,81 @@ export default function Recommend() {
     },
   ];
   const navigate = useNavigate();
+  function SampleNextArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{
+          ...style,
+          display: "block",
+        }}
+        onClick={onClick}
+      />
+    );
+  }
+
+  function SamplePrevArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{
+          ...style,
+          display: "block",
+        }}
+        onClick={onClick}
+      />
+    );
+  }
+
+  var settings = {
+    dots: true,
+    speed: 2000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: false,
+    autoplaySpeed: 3000,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
+  };
 
   return (
     <div className="bg-bg-secondary p-2 pb-6 text-[#2D3342]">
-      <div className="text-center m-4 p-4 font-semibold md:text-3xl text-lg ">
-        Need More Clarity on This !!!
+      <div className="font-medium text-center p-2 px-4">
+        Confused about what’s best for you? Let us
+        guide you toward the perfect solution for
+        your health.
       </div>
-      <div>
-        <div className="font-medium text-center p-2 md:text-lg text-sm px-4">
-          Confused about what’s best for you? Let
-          us guide you toward the perfect solution
-          for your health.
-        </div>
-        <div className="flex flex-wrap py-2 gap-4 justify-center items-center">
+      <div className="p-5">
+        <Slider {...settings}>
           {recommendations.map(
             (recommendations, index) => (
-              <RecommendCard
-                img={recommendations.img}
-                title={recommendations.title}
-                desc={recommendations.desc}
-                key={index}
-                navigate={() =>
-                  navigate("/doctors")
-                }
-              />
+              <div className="m-4">
+                <Link to="/doctors">
+                  <div
+                    className="w-[90%] border border-gray-300 rounded-lg shadow-lg duration-150 bg-bg-secondary"
+                    onClick={navigate("/doctors")}
+                  >
+                    <img
+                      src={recommendations.img}
+                      alt="card img"
+                      className="w-full h-44 rounded-t-lg object-cover"
+                    />
+                    <div className="p-2">
+                      <h2 className="font-semibold ">
+                        {recommendations.title}
+                      </h2>
+                      <p className="text-sm font-thin text-gray-800">
+                        {recommendations.desc}
+                      </p>
+                    </div>
+                  </div>
+                </Link>
+              </div>
             )
           )}
-        </div>
+        </Slider>
       </div>
     </div>
   );

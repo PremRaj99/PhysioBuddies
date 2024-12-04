@@ -17,9 +17,9 @@ export default function ContactUs() {
 
   return (
     <>
-      <h2 className="text-2xl font-semibold text-text-primary text-center bg-bg-secondary pb-8">
+      <div className="text-2xl font-semibold text-text-primary text-center bg-bg-secondary py-16">
         Contact Us
-      </h2>
+      </div>
 
       {/* Contact Form */}
       <div className="bg-bg-secondary flex flex-wrap justify-center ">
