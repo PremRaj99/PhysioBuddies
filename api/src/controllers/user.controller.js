@@ -30,7 +30,7 @@ export const getUsers = asyncHandler(async (req, res) => {
       return rest;
     });
 
-    res.json(ApiResponse(200, users, "fetch successful"));
+    res.json(new ApiResponse(200, users, "fetch successful"));
   } catch (error) {
     throw new ApiError(500, error.message);
   }
@@ -51,7 +51,7 @@ export const getUser = asyncHandler(async (req, res) => {
     }
 
     const { password, refreshToken, ...rest } = user._doc;
-    res.json(ApiResponse(200, rest, "fetch successful"));
+    res.json(new ApiResponse(200, rest, "fetch successful"));
   } catch (error) {
     throw new ApiError(500, error.message);
   }
@@ -95,7 +95,7 @@ export const updateUser = asyncHandler(async (req, res) => {
 
     const { password, refreshToken, ...rest } = updatedUser._doc;
 
-    res.json(ApiResponse(200, rest, "update successful"));
+    res.json(new ApiResponse(200, rest, "update successful"));
   } catch (error) {
     throw new ApiError(500, error.message);
   }
@@ -115,7 +115,7 @@ export const deleteUser = asyncHandler(async (req, res) => {
       throw new ApiError(404, "User not found");
     }
 
-    res.json(ApiResponse(200, null, "delete successful"));
+    res.json(new ApiResponse(200, null, "delete successful"));
   } catch (error) {
     throw new ApiError(500, error.message);
   }

@@ -26,7 +26,7 @@ export const createReview = asyncHandler(async (req, res) => {
 
     await newReview.save();
 
-    res.status(201).json(ApiResponse(201, newReview, "Review created"));
+    res.status(201).json(new ApiResponse(201, newReview, "Review created"));
   } catch (error) {
     throw new ApiError(400, error.message);
   }
@@ -38,7 +38,7 @@ export const getReviews = asyncHandler(async (req, res) => {
 
     const reviews = await Review.find({ therapistId: id });
 
-    res.status(200).json(ApiResponse(200, reviews, "Reviews retrieved"));
+    res.status(200).json(new ApiResponse(200, reviews, "Reviews retrieved"));
   } catch (error) {
     throw new ApiError(400, error.message);
   }
