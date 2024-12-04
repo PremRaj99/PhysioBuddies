@@ -12,7 +12,7 @@ export const getAvailability = asyncHandler(async (req, res) => {
       throw new ApiError(404, "Availability not found for this therapist");
     }
 
-    res.status(200).json(ApiResponse(200, availability, "Success"));
+    res.status(200).json(new ApiResponse(200, availability, "Success"));
   } catch (error) {
     throw new ApiError(500, error.message);
   }
@@ -34,7 +34,7 @@ export const getAvailabilities = asyncHandler(async (req, res) => {
     if (!availabilities) {
       throw new ApiError(404, "No availabilities found for this therapist");
     }
-    res.status(200).json(ApiResponse(200, availabilities, "Success"));
+    res.status(200).json(new ApiResponse(200, availabilities, "Success"));
   } catch (error) {
     throw new ApiError(500, error.message);
   }
@@ -53,7 +53,7 @@ export const createAvailability = asyncHandler(async (req, res) => {
     });
     res
       .status(201)
-      .json(ApiResponse(201, availability, "Availability created"));
+      .json(new ApiResponse(201, availability, "Availability created"));
   } catch (error) {
     throw new ApiError(500, error.message);
   }

@@ -1,4 +1,3 @@
-import cryoto from "crypto";
 import EmailVerification from "../models/emailVerification.model.js";
 
 export default async function generateCrypto(userId, email) {

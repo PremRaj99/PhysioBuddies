@@ -19,7 +19,7 @@ export const getNotifications = asyncHandler(async (req, res) => {
       throw new ApiError(404, "No notifications found");
     }
 
-    res.status(200).json(ApiResponse(200, notification, "fetch notifications"));
+    res.status(200).json(new ApiResponse(200, notification, "fetch notifications"));
   } catch (error) {
     throw new ApiError(500, error.message);
   }
@@ -32,7 +32,7 @@ export const getNotification = asyncHandler(async (req, res) => {
     if (!notification) {
       throw new ApiError(404, "Notification not found");
     }
-    res.status(200).json(ApiResponse(200, notification, "fetch notification"));
+    res.status(200).json(new ApiResponse(200, notification, "fetch notification"));
   } catch (error) {
     throw new ApiError(500, error.message);
   }
@@ -43,7 +43,7 @@ export const createNotification = asyncHandler(async (req, res) => {
     const { userId, message } = req.body;
     const notification = new Notification({ userId, message });
     await notification.save();
-    res.status(201).json(ApiResponse(201, notification, "Notification created"));
+    res.status(201).json(new ApiResponse(201, notification, "Notification created"));
   } catch (error) {
     throw new ApiError(500, error.message);
   }
@@ -58,7 +58,7 @@ export const readNotification = asyncHandler(async (req, res) => {
     }
     notification.isRead = true;
     await notification.save();
-    res.status(200).json(ApiResponse(200, notification, "Notification read"));
+    res.status(200).json(new ApiResponse(200, notification, "Notification read"));
   } catch (error) {
     throw new ApiError(500, error.message);
   }
@@ -76,7 +76,7 @@ export const updateNotification = asyncHandler(async (req, res) => {
     notification.message = message;
     notification.isRead = isRead;
     await notification.save();
-    res.status(200).json(ApiResponse(200, notification, "Notification updated"));
+    res.status(200).json(new ApiResponse(200, notification, "Notification updated"));
   } catch (error) {
     throw new ApiError(500, error.message);
   }
@@ -91,7 +91,7 @@ export const deleteNotification = asyncHandler(async (req, res) => {
     }
 
     await notification.remove();
-    res.status(200).json(ApiResponse(200, {}, "Notification deleted"));
+    res.status(200).json(new ApiResponse(200, {}, "Notification deleted"));
   } catch (error) {
     throw new ApiError(500, error.message);
   }

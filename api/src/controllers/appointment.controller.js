@@ -24,7 +24,7 @@ export const createAppointment = asyncHandler(async (req, res) => {
 
     await appointment.save();
 
-    res.status(201).json(ApiResponse(201, appointment, "Appointment created"));
+    res.status(201).json(new ApiResponse(201, appointment, "Appointment created"));
   } catch (error) {
     throw new ApiError(500, error.message);
   }
@@ -50,7 +50,7 @@ export const getAppointments = asyncHandler(async (req, res) => {
 
     res
       .status(200)
-      .json(ApiResponse(200, appointments, "Appointments retrieved"));
+      .json(new ApiResponse(200, appointments, "Appointments retrieved"));
   } catch (error) {
     throw new ApiError(500, error.message);
   }
@@ -76,7 +76,7 @@ export const getAppointment = asyncHandler(async (req, res) => {
       );
     }
 
-    res.status(200).json(ApiResponse(200, appointment, "Appointment retrieved"));
+    res.status(200).json(new ApiResponse(200, appointment, "Appointment retrieved"));
   } catch (error) {
     throw new ApiError(500, error.message);
   }
@@ -111,7 +111,7 @@ export const updateAppointment = asyncHandler(async (req, res) => {
 
     res
       .status(200)
-      .json(ApiResponse(200, appointment, "Appointment updated successfully"));
+      .json(new ApiResponse(200, appointment, "Appointment updated successfully"));
   } catch (error) {
     throw new ApiError(500, error.message);
   }
@@ -145,7 +145,7 @@ export const completeAppointment = asyncHandler(async (req, res) => {
 
     res
       .status(200)
-      .json(ApiResponse(200, appointment, "Appointment completed successfully"));
+      .json(new ApiResponse(200, appointment, "Appointment completed successfully"));
   } catch (error) {
     throw new ApiError(500, error.message);
   }
@@ -174,7 +174,7 @@ export const deleteAppointment = asyncHandler(async (req, res) => {
 
     res
       .status(200)
-      .json(ApiResponse(200, {}, "Appointment deleted successfully"));
+      .json(new ApiResponse(200, {}, "Appointment deleted successfully"));
   } catch (error) {
     throw new ApiError(500, error.message);
   }

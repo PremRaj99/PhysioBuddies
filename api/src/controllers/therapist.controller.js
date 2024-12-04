@@ -32,7 +32,7 @@ export const getTherapists = asyncHandler(async (req, res) => {
       .limit(limit)
       .skip((page - 1) * limit);
 
-    res.json(ApiResponse(200, therapists, "fetch successful"));
+    res.json(new ApiResponse(200, therapists, "fetch successful"));
   } catch (error) {
     throw new ApiError(500, error.message);
   }
@@ -48,7 +48,7 @@ export const getTherapist = asyncHandler(async (req, res) => {
     if (!therapist) {
       throw new ApiError(404, "Therapist not found");
     }
-    res.json(ApiResponse(200, therapist, "fetch successful"));
+    res.json(new ApiResponse(200, therapist, "fetch successful"));
   } catch (error) {
     throw new ApiError(500, error.message);
   }
@@ -86,7 +86,7 @@ export const createTherapist = asyncHandler(async (req, res) => {
     });
 
     await therapist.save();
-    res.json(ApiResponse(201, therapist, "Therapist created"));
+    res.json(new ApiResponse(201, therapist, "Therapist created"));
   } catch (error) {
     throw new ApiError(500, error.message);
   }
@@ -120,7 +120,7 @@ export const updateTherapist = asyncHandler(async (req, res) => {
 
     await therapist.save();
 
-    res.json(ApiResponse(200, therapist, "Therapist updated"));
+    res.json(new ApiResponse(200, therapist, "Therapist updated"));
   } catch (error) {
     throw new ApiError(500, error.message);
   }
@@ -144,7 +144,7 @@ export const deleteTherapist = asyncHandler(async (req, res) => {
 
     await Promise.all([therapist.remove(), user.remove()]);
 
-    res.json(ApiResponse(200, {}, "Therapist deleted"));
+    res.json(new ApiResponse(200, {}, "Therapist deleted"));
   } catch (error) {
     throw new ApiError(500, error.message);
   }
@@ -161,7 +161,7 @@ export const verifyTherapist = asyncHandler(async (req, res) => {
     therapist.isVerified = true;
     await therapist.save();
 
-    res.json(ApiResponse(200, therapist, "Therapist verified"));
+    res.json(new ApiResponse(200, therapist, "Therapist verified"));
   } catch (error) {
     throw new ApiError(500, error.message);
   }
