@@ -160,7 +160,7 @@ function AddBlog() {
           </div>
         </div>
       </div>
-      {/* <div className="">{content}</div> */}
+      <div className="">{content}</div>
     </div>
   );
 }

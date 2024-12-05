@@ -10,7 +10,17 @@ export default {
   		colors: {
   			'bg-primary': '#ecf6ff',
   			'bg-secondary': '#f6ffff',
-  			'text-primary': '#15415c'
+  			'text-primary': '#15415c',
+  			sidebar: {
+  				DEFAULT: 'hsl(var(--sidebar-background))',
+  				foreground: 'hsl(var(--sidebar-foreground))',
+  				primary: 'hsl(var(--sidebar-primary))',
+  				'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
+  				accent: 'hsl(var(--sidebar-accent))',
+  				'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
+  				border: 'hsl(var(--sidebar-border))',
+  				ring: 'hsl(var(--sidebar-ring))'
+  			}
   		},
   		screens: {
   			'xl-custom': '1262px'

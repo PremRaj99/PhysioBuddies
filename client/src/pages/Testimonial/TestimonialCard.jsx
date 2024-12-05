@@ -15,7 +15,7 @@ export default function TestimonialCard({
       testimonial.substring(0, 80) + "...";
   }
   return (
-    <div className="bg-bg-primary rounded-lg shadow-xl my-2 mx-4 h-[500px] md:h-auto">
+    <div className="bg-bg-primary rounded-lg shadow-xl my-2 mx-4 h-[500px] md:min-h-[500px]">
       <div className="text-xl bg-text-primary text-white text-center py-2 rounded-t-lg">
         {condition}
       </div>
@@ -29,7 +29,7 @@ export default function TestimonialCard({
       <div className="flex flex-col p-4 gap-1">
         <p>{testimonial}</p>
         <div className="flex justify-between mt-2 flex-wrap">
-          <div className="font-semibold">
+          <div className="font-semibold truncate">
             {name}, {age} <br />
             {occupation} <br />
             {location}
