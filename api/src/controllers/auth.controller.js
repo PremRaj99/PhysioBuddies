@@ -25,10 +25,19 @@ const generateAccessAndRefreshTokens = asyncHandler(async (userId) => {
 });
 
 export const signup = asyncHandler(async (req, res, next) => {
-  const { fullName, email, username, password, phone, role } = req.body;
+  const {
+    fullName,
+    email,
+    username,
+    password,
+    phone,
+    role = "user",
+  } = req.body;
 
   if (
-    [fullName, email, username, password].some((field) => field?.trim() === "")
+    [fullName, email, username, phone, password].some(
+      (field) => field?.trim() === ""
+    )
   ) {
     throw new ApiError(400, "All fields are required!");
   }
@@ -51,6 +60,10 @@ export const signup = asyncHandler(async (req, res, next) => {
     }
   }
 
+  if (role !== "therapist" && role !== "user") {
+    throw new ApiError(400, "Invalid role");
+  }
+
   const user = await User.create({
     fullName,
     avatar: avatarUrl,
@@ -58,7 +71,7 @@ export const signup = asyncHandler(async (req, res, next) => {
     password,
     username: username.toLowerCase(),
     phone,
-    role: role || "user",
+    role: role,
   });
 
   const token = generateCrypto(user._id, email);
@@ -72,11 +85,21 @@ export const signup = asyncHandler(async (req, res, next) => {
   }
   return res
     .status(201)
-    .json(new ApiResponse(200, createUser, "user registered successfully"));
+    .json(
+      new ApiResponse(
+        200,
+        { user: createUser, redirect: "/verifyemail" },
+        "user registered successfully"
+      )
+    );
 });
 
 export const verifyEmail = asyncHandler(async (req, res, next) => {
   const { email, token } = req.body;
+
+  if (!email || !token) {
+    throw new ApiError(400, "token are required!");
+  }
 
   const verifyEmail = await EmailVerification.findOne(email);
 
@@ -101,9 +124,19 @@ export const verifyEmail = asyncHandler(async (req, res, next) => {
     throw ApiError(400, "user does not exist!");
   }
 
+  const { refreshToken, accessToken } = generateAccessAndRefreshTokens(
+    user._id
+  );
+
   return res
     .status(200)
-    .json(new ApiResponse(200, user, "Email verified successfully!"));
+    .json(
+      new ApiResponse(
+        200,
+        { user, refreshToken, accessToken },
+        "Email verified successfully!"
+      )
+    );
 });
 
 export const login = asyncHandler(async (req, res, next) => {

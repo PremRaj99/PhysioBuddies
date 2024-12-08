@@ -3,12 +3,17 @@ import { Link } from "react-router-dom";
 import Button from "../Common/Button";
 import GoogleButton from "../Common/GoogleButton";
 import MetaButton from "../Common/MetaButton";
+import useAuth from "@/services/authService";
+import toast from "@/utils/toast";
 
 export default function LoginForm() {
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
+  const [loading, setLoading] = useState(false);
+
+  const Auth = useAuth();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -18,9 +23,15 @@ export default function LoginForm() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     // Add your login logic here
+    if(!formData.email || !formData.password) {
+      return toast.error("Email and password are required!");
+    }
+    await Auth.login(formData.email, formData.password);
+    setLoading(false);
   };
 
   return (
@@ -88,9 +99,12 @@ export default function LoginForm() {
 
           <button
             type="submit"
+            disabled={loading}
             className="w-full bg-text-primary text-white py-[10px] px-8 my-2 rounded-lg hover:bg-text-primary transition duration-300 font-semibold"
           >
-            Login
+            {
+              loading ? "Loading..." : "Login"
+            }
           </button>
 
           <div className="flex items-center justify-center gap-4">

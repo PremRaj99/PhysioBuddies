@@ -22,7 +22,7 @@ router.post(
   ]),
   signup
 );
-router.post("/verify", verifyJWT, verifyEmail);
+router.post("/verify", verifyEmail);
 router.post("/signout", verifyJWT, signout);
 router.post("/refresh", refreshAccessToken);
 
