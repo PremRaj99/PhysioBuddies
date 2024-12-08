@@ -4,7 +4,7 @@ import { ApiError } from "../utils/ApiError.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
 import { asyncHandler } from "../utils/asyncHandler.js";
 
-export const pay = asyncHandler(async (req, res) => {
+export const pay = asyncHandler(async (req, res, next) => {
   try {
     const { appointmentId, amount, paymentMethod, transactionId } = req.body;
 
@@ -24,7 +24,7 @@ export const pay = asyncHandler(async (req, res) => {
   }
 });
 
-export const success = asyncHandler(async (req, res) => {
+export const success = asyncHandler(async (req, res, next) => {
   try {
     const { id } = req.params;
 
@@ -44,7 +44,7 @@ export const success = asyncHandler(async (req, res) => {
   }
 });
 
-export const history = asyncHandler(async (req, res) => {
+export const history = asyncHandler(async (req, res, next) => {
   try {
     const { _id } = req.user;
 
@@ -66,7 +66,7 @@ export const history = asyncHandler(async (req, res) => {
   }
 });
 
-export const paymentStatus = asyncHandler(async (req, res) => {
+export const paymentStatus = asyncHandler(async (req, res, next) => {
   try {
     const { id } = req.params;
 

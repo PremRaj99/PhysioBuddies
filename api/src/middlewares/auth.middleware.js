@@ -5,8 +5,8 @@ import { ApiError } from "../utils/ApiError.js";
 export default async function verifyJWT(req, res, next) {
   try {
     const token =
-      req.cookie?.accessToken ||
-      req.header("Authorization")?.replace("Beader ", "");
+      req.cookies?.accessToken ||
+      req.header("Authorization")?.replace("Bearer ", "");
 
     if (!token) {
       throw new ApiError(401, "Unauthorized request");
@@ -25,26 +25,36 @@ export default async function verifyJWT(req, res, next) {
     req.user = decodedToken;
     next();
   } catch (error) {
-    throw new ApiError(500, "Something went wrong in JWT verification");
+    if (error.name === "JsonWebTokenError") {
+      // Token is invalid
+      next(new ApiError(401, "Invalid access token"));
+    } else if (error.name === "TokenExpiredError") {
+      // Token has expired
+      next(new ApiError(401, "Access token has expired"));
+    } else {
+      // Generic error
+      next(new ApiError(500, "Something went wrong in JWT verification"));
+    }
   }
 }
 
 export async function verifyAdmin(req, res, next) {
-  if (req.user.role !== "admin") {
+  if (!req.user || req.user.role !== "admin") {
     throw new ApiError(403, "Forbidden");
   }
+  
   next();
 }
 
 export async function verifyTherapist(req, res, next) {
-  if (req.user.role !== "therapist") {
+  if (!req.user || req.user.role !== "therapist") {
     throw new ApiError(403, "Forbidden");
   }
   next();
 }
 
 export async function verifyUser(req, res, next) {
-  if (req.user.role !== "user") {
+  if (!req.user || req.user.role !== "user") {
     throw new ApiError(403, "Forbidden");
   }
   next();

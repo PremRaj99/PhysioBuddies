@@ -9,6 +9,7 @@ import {
   getUsers,
   updateUser,
 } from "../controllers/user.controller.js";
+import { upload } from "../middlewares/multer.middleware.js";
 
 const router = express.Router();
 

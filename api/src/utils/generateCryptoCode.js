@@ -1,8 +1,9 @@
 import EmailVerification from "../models/emailVerification.model.js";
+import crypto from "crypto";
 
 export default async function generateCrypto(userId, email) {
   const token = crypto.randomBytes(20).toString("hex");
-  const expiredIn = new Date(date.getTime() + 5 * 60000); // 5 minutes from now
+  const expiredIn = new Date(new Date().getTime() + 5 * 60000); // 5 minutes from now
 
   try {
     const emailExist = await EmailVerification.findOne({ email });

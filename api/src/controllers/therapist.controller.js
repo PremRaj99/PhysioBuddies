@@ -4,7 +4,7 @@ import { ApiError } from "../utils/ApiError.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
 import { asyncHandler } from "../utils/asyncHandler.js";
 
-export const getTherapists = asyncHandler(async (req, res) => {
+export const getTherapists = asyncHandler(async (req, res, next) => {
   try {
     const { page = 1, limit = 10, q, sort } = req.query;
     let therapists;
@@ -38,7 +38,7 @@ export const getTherapists = asyncHandler(async (req, res) => {
   }
 });
 
-export const getTherapist = asyncHandler(async (req, res) => {
+export const getTherapist = asyncHandler(async (req, res, next) => {
   try {
     const therapist = await Therapist.findById(req.params.id).populate({
       path: "userId",
@@ -54,7 +54,7 @@ export const getTherapist = asyncHandler(async (req, res) => {
   }
 });
 
-export const createTherapist = asyncHandler(async (req, res) => {
+export const createTherapist = asyncHandler(async (req, res, next) => {
   try {
     const userId = req.user._id;
 
@@ -92,7 +92,7 @@ export const createTherapist = asyncHandler(async (req, res) => {
   }
 });
 
-export const updateTherapist = asyncHandler(async (req, res) => {
+export const updateTherapist = asyncHandler(async (req, res, next) => {
   try {
     const { id } = req.params;
     const {
@@ -126,7 +126,7 @@ export const updateTherapist = asyncHandler(async (req, res) => {
   }
 });
 
-export const deleteTherapist = asyncHandler(async (req, res) => {
+export const deleteTherapist = asyncHandler(async (req, res, next) => {
   try {
     const { id } = req.params;
     const therapist = await Therapist.findById(id);
@@ -150,7 +150,7 @@ export const deleteTherapist = asyncHandler(async (req, res) => {
   }
 });
 
-export const verifyTherapist = asyncHandler(async (req, res) => {
+export const verifyTherapist = asyncHandler(async (req, res, next) => {
   try {
     const { id } = req.params;
     const therapist = await Therapist.findById(id);

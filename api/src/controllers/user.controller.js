@@ -4,7 +4,7 @@ import { ApiResponse } from "../utils/ApiResponse.js";
 import { asyncHandler } from "../utils/asyncHandler.js";
 import generateCrypto from "../utils/generateCryptoCode.js";
 
-export const getUsers = asyncHandler(async (req, res) => {
+export const getUsers = asyncHandler(async (req, res, next) => {
   try {
     const { page = 1, limit = 10, q, sort } = req.query;
 
@@ -36,7 +36,7 @@ export const getUsers = asyncHandler(async (req, res) => {
   }
 });
 
-export const getUser = asyncHandler(async (req, res) => {
+export const getUser = asyncHandler(async (req, res, next) => {
   try {
     const { id } = req.params;
 
@@ -57,7 +57,7 @@ export const getUser = asyncHandler(async (req, res) => {
   }
 });
 
-export const updateUser = asyncHandler(async (req, res) => {
+export const updateUser = asyncHandler(async (req, res, next) => {
   try {
     const { id } = req.params;
     const { username, email, phone } = req.body;
@@ -101,7 +101,7 @@ export const updateUser = asyncHandler(async (req, res) => {
   }
 });
 
-export const deleteUser = asyncHandler(async (req, res) => {
+export const deleteUser = asyncHandler(async (req, res, next) => {
   try {
     const { id } = req.params;
 

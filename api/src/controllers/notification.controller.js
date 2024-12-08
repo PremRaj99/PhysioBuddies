@@ -3,7 +3,7 @@ import { ApiError } from "../utils/ApiError.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
 import { asyncHandler } from "../utils/asyncHandler.js";
 
-export const getNotifications = asyncHandler(async (req, res) => {
+export const getNotifications = asyncHandler(async (req, res, next) => {
   try {
     const { _id, role } = req.user;
     let notification;
@@ -25,7 +25,7 @@ export const getNotifications = asyncHandler(async (req, res) => {
   }
 });
 
-export const getNotification = asyncHandler(async (req, res) => {
+export const getNotification = asyncHandler(async (req, res, next) => {
   try {
     const { id } = req.params;
     const notification = await Notification.findById(id);
@@ -38,7 +38,7 @@ export const getNotification = asyncHandler(async (req, res) => {
   }
 });
 
-export const createNotification = asyncHandler(async (req, res) => {
+export const createNotification = asyncHandler(async (req, res, next) => {
   try {
     const { userId, message } = req.body;
     const notification = new Notification({ userId, message });
@@ -49,7 +49,7 @@ export const createNotification = asyncHandler(async (req, res) => {
   }
 });
 
-export const readNotification = asyncHandler(async (req, res) => {
+export const readNotification = asyncHandler(async (req, res, next) => {
   try {
     const { id } = req.params;
     const notification = await Notification.findById(id);
@@ -64,7 +64,7 @@ export const readNotification = asyncHandler(async (req, res) => {
   }
 });
 
-export const updateNotification = asyncHandler(async (req, res) => {
+export const updateNotification = asyncHandler(async (req, res, next) => {
   try {
     const { id } = req.params;
     const { userId, message, isRead } = req.body;
@@ -82,7 +82,7 @@ export const updateNotification = asyncHandler(async (req, res) => {
   }
 });
 
-export const deleteNotification = asyncHandler(async (req, res) => {
+export const deleteNotification = asyncHandler(async (req, res, next) => {
   try {
     const { id } = req.params;
     const notification = await Notification.findById(id);

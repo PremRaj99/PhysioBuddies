@@ -3,7 +3,7 @@ import { ApiError } from "../utils/ApiError.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
 import { asyncHandler } from "../utils/asyncHandler.js";
 
-export const createAppointment = asyncHandler(async (req, res) => {
+export const createAppointment = asyncHandler(async (req, res, next) => {
   try {
     const { _id } = req.user;
     const { date, time, doctorId, address, city, region, notes } = req.body;
@@ -31,7 +31,7 @@ export const createAppointment = asyncHandler(async (req, res) => {
   res.status(201).json({ message: "Appointment created" });
 });
 
-export const getAppointments = asyncHandler(async (req, res) => {
+export const getAppointments = asyncHandler(async (req, res, next) => {
   try {
     const { _id, role } = req.user;
     let appointments;
@@ -56,7 +56,7 @@ export const getAppointments = asyncHandler(async (req, res) => {
   }
 });
 
-export const getAppointment = asyncHandler(async (req, res) => {
+export const getAppointment = asyncHandler(async (req, res, next) => {
   try {
     const { id } = req.params;
     const appointment = await Appointment.findById(id);
@@ -82,7 +82,7 @@ export const getAppointment = asyncHandler(async (req, res) => {
   }
 });
 
-export const updateAppointment = asyncHandler(async (req, res) => {
+export const updateAppointment = asyncHandler(async (req, res, next) => {
   try {
     const { id } = req.params;
     const { date, time, address, city, region, notes } = req.body;
@@ -117,7 +117,7 @@ export const updateAppointment = asyncHandler(async (req, res) => {
   }
 });
 
-export const completeAppointment = asyncHandler(async (req, res) => {
+export const completeAppointment = asyncHandler(async (req, res, next) => {
   try {
     const { id } = req.params;
 
@@ -151,7 +151,7 @@ export const completeAppointment = asyncHandler(async (req, res) => {
   }
 });
 
-export const deleteAppointment = asyncHandler(async (req, res) => {
+export const deleteAppointment = asyncHandler(async (req, res, next) => {
   try {
     const { id } = req.params;
 

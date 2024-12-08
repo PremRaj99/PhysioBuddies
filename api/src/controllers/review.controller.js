@@ -4,7 +4,7 @@ import { ApiError } from "../utils/ApiError.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
 import { asyncHandler } from "../utils/asyncHandler.js";
 
-export const createReview = asyncHandler(async (req, res) => {
+export const createReview = asyncHandler(async (req, res, next) => {
   try {
     const { rating, review, appointmentId } = req.body;
     const { _id: patientId } = req.user;
@@ -32,7 +32,7 @@ export const createReview = asyncHandler(async (req, res) => {
   }
 });
 
-export const getReviews = asyncHandler(async (req, res) => {
+export const getReviews = asyncHandler(async (req, res, next) => {
   try {
     const { id } = req.params;
 

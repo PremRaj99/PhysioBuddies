@@ -3,7 +3,7 @@ import { ApiError } from "../utils/ApiError.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
 import { asyncHandler } from "../utils/asyncHandler.js";
 
-export const getAvailability = asyncHandler(async (req, res) => {
+export const getAvailability = asyncHandler(async (req, res, next) => {
   try {
     const availability = await Availability.find({
       therapistId: req.params.id,
@@ -18,7 +18,7 @@ export const getAvailability = asyncHandler(async (req, res) => {
   }
 });
 
-export const getAvailabilities = asyncHandler(async (req, res) => {
+export const getAvailabilities = asyncHandler(async (req, res, next) => {
   try {
     const { q, page = 1, limit = 10 } = req.query;
     let query = {};
@@ -40,7 +40,7 @@ export const getAvailabilities = asyncHandler(async (req, res) => {
   }
 });
 
-export const createAvailability = asyncHandler(async (req, res) => {
+export const createAvailability = asyncHandler(async (req, res, next) => {
   try {
     const { day, date, timeSlots } = req.body;
     const therapistId = req.user._id;
