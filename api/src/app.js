@@ -27,9 +27,6 @@ import appointmentRouter from "./routes/appointment.route.js";
 import availabilityRouter from "./routes/availability.route.js";
 import paymentRouter from "./routes/payment.route.js";
 import blogRouter from "./routes/blog.route.js";
-import { ApiError } from "./utils/ApiError.js";
-import { ApiResponse } from "./utils/ApiResponse.js";
-import { asyncHandler } from "./utils/asyncHandler.js";
 
 // define your API routers
 app.use("/api/v1/auth", authRouter);
