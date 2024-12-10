@@ -33,7 +33,9 @@ const getBlogBySlug = async (slug) => {
 
 const createBlog = async (blogData) => {
   try {
-    const { data } = await axios.post("/api/v1/blog", blogData);
+    const { data } = await axios.post("/api/v1/blog", blogData, {
+      headers: { "Content-Type": "multipart/form-data" },
+    });
 
     if (data.success) return toast.success(data.message);
     else {

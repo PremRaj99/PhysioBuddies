@@ -24,7 +24,7 @@
   }
   
   .blog-content img {
-    @apply w-full h-auto rounded-lg shadow-md my-8 object-cover;
+    @apply max-h-96 rounded-lg shadow-md my-8 object-cover;
   }
   
   .blog-content blockquote {

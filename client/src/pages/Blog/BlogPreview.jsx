@@ -41,7 +41,7 @@ export default function BlogPreview() {
     <div className="bg-bg-secondary min-h-screen py-8">
       <div className="container mx-auto px-4">
         {/* Blog Header */}
-        <div className="bg-bg-primary rounded-xl shadow-lg overflow-hidden mb-8">
+        <div className="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
           {/* Thumbnail */}
           <div className="w-full h-64 md:h-96 overflow-hidden">
             <img 

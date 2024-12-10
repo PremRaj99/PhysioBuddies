@@ -12,8 +12,13 @@ export const createBlog = asyncHandler(async (req, res, next) => {
   }
   const slug = title.toLowerCase().split(" ").join("-");
   const readTime = Math.ceil(content.split(" ").length / 200);
+  
+  if (summary.length > 200) {
+    throw new ApiError(400, "Summary should not exceed 200 characters");
+  }
 
   const thumbnailLocalPath = req.files?.thumbnail?.[0]?.path;
+  
 
   let thumbnailUrl;
   if (thumbnailLocalPath) {
@@ -22,10 +27,8 @@ export const createBlog = asyncHandler(async (req, res, next) => {
       thumbnailUrl = thumbnail.url;
     }
   }
+  console.log(thumbnailUrl)
 
-  if (summary.length > 200) {
-    throw new ApiError(400, "Summary should not exceed 200 characters");
-  }
 
   try {
     const blog = new Blog({
@@ -42,7 +45,7 @@ export const createBlog = asyncHandler(async (req, res, next) => {
 
     res.status(201).json(new ApiResponse(201, blog, "Blog created"));
   } catch (error) {
-    throw new ApiError(500, "Error in creating blog");
+    throw new ApiError(500, "Error in creating blog: " + error.message);
   }
 });
 
