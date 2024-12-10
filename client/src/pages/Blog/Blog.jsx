@@ -119,7 +119,7 @@ export default function Blog() {
             date={blog.createdAt}
             views={blog.views}
             key={index}
-            onClick={() => navigate("/blog-preview/" + blog.slug)}
+            onClick={() => navigate("/blog/" + blog.slug)}
           />
         ))}
       </div>

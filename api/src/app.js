@@ -39,6 +39,10 @@ app.use("/api/v1/availability", availabilityRouter);
 app.use("/api/v1/payment", paymentRouter);
 app.use("/api/v1/blog", blogRouter);
 
+app.get("/", (req, res) => {
+  res.send("Welcome to PhysioBuddies API");
+});
+
 app.use((err, req, res, next) => {
   console.log(err.message);
   return res.status(err.statusCode || 500).json({

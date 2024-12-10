@@ -9,7 +9,7 @@ const port = process.env.PORT || 3000;
 connectDb()
   .then(
     app.listen(port, () => {
-      console.log("Server is running on http://localhost" + port);
+      console.log("Server is running on http://localhost:" + port);
     })
   )
   .catch((err) => console.log("MONGO connection failed: ", err));

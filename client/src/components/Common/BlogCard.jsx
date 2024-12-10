@@ -11,9 +11,9 @@ export default function BlogCard({
   onClick
 }) {
   const eclipseTitle =
-    title.length > 60 ? title.substring(0, 60) + "..." : title;
+    title.length > 120 ? title.substring(0, 120) + "..." : title;
   const eclipseDesc =
-    descr.length > 60 ? descr.substring(0, 60) + "..." : descr;
+    descr.length > 120 ? descr.substring(0, 120) + "..." : descr;
   const dateFormat = formatDate(date);
   return (
     <div className="w-96 border border-gray-300 rounded-lg hover:scale-[1.01] shadow-lg duration-150 cursor-pointer" onClick={onClick}>

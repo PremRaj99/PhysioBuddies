@@ -29,7 +29,7 @@ export default function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/editprofile" element={<EditProfile />} />
-        <Route path="/blog/:id" element={<BlogPreview />} />
+        <Route path="/blog/:slug" element={<BlogPreview />} />
         <Route path="/doctors" element={<TherapistList />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/doctors/preview" element={<TherapistDetail />} />

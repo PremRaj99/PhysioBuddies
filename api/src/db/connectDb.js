@@ -3,8 +3,9 @@ import { DB_NAME } from "../constant.js";
 
 export default async function connectDb() {
   try {
-    await mongoose
-      .connect(`${process.env.MONGO}/${DB_NAME}`)
+    const uri = process.env.MONGO
+      await mongoose
+      .connect(`${uri}/${DB_NAME}`)
       .then(console.log("MONGO is connected!"))
       .catch((err) => {
         console.log("MONGO connection failed " + err);
