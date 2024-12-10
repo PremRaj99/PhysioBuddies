@@ -1,4 +1,9 @@
-import React, { useState, useRef, useMemo, useEffect } from "react";
+import React, {
+  useState,
+  useRef,
+  useMemo,
+  useEffect,
+} from "react";
 import JoditEditor from "jodit-react";
 import TagInput from "./TagInput";
 import ImageUploader from "./ImageUploader";
@@ -15,7 +20,8 @@ export default function AddBlog() {
   });
   const editor = useRef(null);
   const [tags, setTags] = useState([]);
-  const [thumbnail, setThumbnail] = useState(null);
+  const [thumbnail, setThumbnail] =
+    useState(null);
   const [images, setImages] = useState(null);
   const [loading, setLoading] = useState(false);
   const [content, setContent] = useState("");
@@ -28,13 +34,14 @@ export default function AddBlog() {
     data.append("title", formData.title);
     data.append("content", formData.content);
     data.append("summary", formData.summary);
-    data.append("keywords", JSON.stringify(formData.tags)); // Convert array to string
+    data.append(
+      "keywords",
+      JSON.stringify(formData.tags)
+    ); // Convert array to string
     data.append("thumbnail", thumbnail); // Add the file
 
     await blogService.createBlog(data);
     setLoading(false);
-
-    console.log(formData);
   };
 
   useEffect(() => {
@@ -65,10 +72,13 @@ export default function AddBlog() {
 
   return (
     <div className="bg-bg-secondary p-4 flex flex-col justify-center items-center shadow-lg">
-      <div className="rounded-lg gap-10 shadow-lg flex justify-between bg-bg-primary p-4 w-screen md:w-3/4">
-        <form>
+      <div className="rounded-lg gap-10 shadow-lg flex flex-col md:flex-row justify-between bg-bg-primary p-4 w-screen md:w-3/4">
+        <form className="">
           <div className="mb-4">
-            <label className="block text-sm font-bold mb-2" htmlFor="title">
+            <label
+              className="block text-sm font-bold mb-2"
+              htmlFor="title"
+            >
               Title
             </label>
             <input
@@ -82,7 +92,10 @@ export default function AddBlog() {
             />
           </div>
           <div className="mb-4">
-            <label className="block text-sm font-bold mb-2" htmlFor="content">
+            <label
+              className="block text-sm font-bold mb-2"
+              htmlFor="content"
+            >
               Content
             </label>
             <JoditEditor
@@ -100,15 +113,24 @@ export default function AddBlog() {
 
           {/* for tags */}
           <div className="mb-4">
-            <label className="block text-sm font-bold mb-2" htmlFor="tags">
+            <label
+              className="block text-sm font-bold mb-2"
+              htmlFor="tags"
+            >
               Tags
             </label>
             <TagInput setTags={setTags} />
           </div>
 
           <div className="mb-4">
-            <label className="block text-sm font-bold mb-2" htmlFor="summary">
-              Summary <span className="text-red-500">(Under 100 words)</span>
+            <label
+              className="block text-sm font-bold mb-2"
+              htmlFor="summary"
+            >
+              Summary{" "}
+              <span className="text-red-500">
+                (Under 100 words)
+              </span>
             </label>
             <textarea
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -121,13 +143,19 @@ export default function AddBlog() {
           </div>
 
           <div className="mb-4">
-            <label className="block text-sm font-bold mb-2" htmlFor="image">
+            <label
+              className="block text-sm font-bold mb-2"
+              htmlFor="image"
+            >
               Thumbnail{" "}
               <span className="text-red-500">
-                (Note: Aspect ratio should be 16:9)
+                (Note: Aspect ratio should be
+                16:9)
               </span>
             </label>
-            <ImageUploader setThumbnail={setThumbnail} />
+            <ImageUploader
+              setThumbnail={setThumbnail}
+            />
           </div>
           <div className="mb-4"></div>
           <div className="mb-4">
@@ -140,11 +168,17 @@ export default function AddBlog() {
             </button>
           </div>
         </form>
-        <div className="p-4 mt-5 w-1/4 rounded-lg bg-bg-secondary shadow-xl max-h-fit">
+
+        {/* Image URL provider */}
+        <div className="p-4 mt-5 w-full md:w-1/4 rounded-lg bg-bg-secondary shadow-xl max-h-fit">
           Image URL Provider
           <div className="flex flex-col gap-4">
-            <ImageUploader setThumbnail={setImages} />
-            <SecondaryButton>Upload</SecondaryButton>
+            <ImageUploader
+              setThumbnail={setImages}
+            />
+            <SecondaryButton>
+              Upload
+            </SecondaryButton>
             <input
               type="text"
               name="link"
