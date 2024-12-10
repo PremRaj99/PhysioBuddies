@@ -6,7 +6,7 @@ export default function SecondaryButton({
 }) {
   return (
     <button
-      className={`${className} px-4 py-2 border border-text-primary  rounded-full `}
+      className={`${className} px-4 py-2 border border-text-primary duration-500 rounded-full `}
     >
       {children}
     </button>

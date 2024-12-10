@@ -9,6 +9,7 @@ import SuggestedDoctors from "../SuggestedDoctors/SuggestedDoctors.jsx";
 import RecommendCard from "../../components/Common/RecommendCard.jsx";
 import RecommendCorousal from "../../components/Home/RecommendCorousal.jsx";
 import WhyChooseUs from "../WhyChooseUs/WhyChooseUs";
+import QuestionsSection from "../QuestionsSection/QuestionsSection";
 
 export default function Home() {
   return (
@@ -25,6 +26,7 @@ export default function Home() {
       <TestimonialCourosal />
       <WhyChooseUs />
       <SuggestedDoctors />
+      <QuestionsSection />
     </div>
   );
 }
