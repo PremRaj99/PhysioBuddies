@@ -21,30 +21,28 @@ function Dashboard() {
     },
     mobile: {
       label: "Mobile",
-      color: "#60a5fa",
+      color: "bg-bg-primary",
     },
   };
   const chartData = [
     {
       month: "January",
       desktop: 186,
-      mobile: 80,
     },
     {
       month: "February",
       desktop: 305,
-      mobile: 200,
     },
-    { month: "March", desktop: 237, mobile: 120 },
-    { month: "April", desktop: 73, mobile: 190 },
-    { month: "May", desktop: 209, mobile: 130 },
-    { month: "June", desktop: 214, mobile: 140 },
+    { month: "March", desktop: 237 },
+    { month: "April", desktop: 73},
+    { month: "May", desktop: 209},
+    { month: "June", desktop: 214},
   ];
 
   return (
     <div className="bg-bg-secondary p-4">
-      <div className="grid grid-cols-2">
-        <div className="p-4">
+      <div className="grid grid-cols-2 gap-4">
+        <div className="p-4 rounded-lg bg-bg-primary">
           <ChartContainer
             config={chartConfig}
             className="min-h-[200px] w-full"
@@ -57,7 +55,7 @@ function Dashboard() {
               <Bar
                 dataKey="desktop"
                 fill="var(--color-desktop)"
-                radius={4}
+                radius={10}
               />
               <Bar
                 dataKey="mobile"
@@ -67,7 +65,9 @@ function Dashboard() {
             </BarChart>
           </ChartContainer>
         </div>
-        <div className="">kdajns</div>
+        <h2 className="text-center my-auto font-bold text-5xl">
+          Recent Activity
+        </h2>
       </div>
     </div>
   );
