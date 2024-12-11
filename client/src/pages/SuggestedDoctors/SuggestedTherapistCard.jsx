@@ -8,7 +8,7 @@ export default function SuggestedTherapistCard({
   experience = "10 years",
 }) {
   return (
-    <div className="p-6 bg-bg-secondary shadow-lg rounded-xl m-2 ">
+    <div className="p-6 bg-bg-primary shadow-lg rounded-xl m-2 ">
       <div className="w-full">
         <img
           src={profilePhoto}
