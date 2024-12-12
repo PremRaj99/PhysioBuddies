@@ -1,16 +1,13 @@
-import React from "react";
-import Button from "../../components/Common/Button";
-import appointmentLogo from "../../assets/images/appointmentLogos.svg";
-import WhyChooseUsCard from "./WhyChooseUsCard";
+import care from "../../assets/images/offer_section_icons/care.png";
+import encryption from "../../assets/images/offer_section_icons/encryption.png";
+import expert from "../../assets/images/offer_section_icons/expert.png";
 import home from "../../assets/images/offer_section_icons/Home.png";
 import plan from "../../assets/images/offer_section_icons/plans.png";
 import pricing from "../../assets/images/offer_section_icons/pricing.png";
-import expert from "../../assets/images/offer_section_icons/expert.png";
 import recovery from "../../assets/images/offer_section_icons/recovery.png";
-import care from "../../assets/images/offer_section_icons/care.png";
-import trust from "../../assets/images/offer_section_icons/trust.png";
 import support from "../../assets/images/offer_section_icons/support.png";
-import encryption from "../../assets/images/offer_section_icons/encryption.png";
+import trust from "../../assets/images/offer_section_icons/trust.png";
+import WhyChooseUsCard from "./WhyChooseUsCard";
 
 export default function WhyChooseUs() {
   const data = [
@@ -65,7 +62,7 @@ export default function WhyChooseUs() {
       <h2 className="font-bold md:text-2xl text-xl text-center pt-8">
         What we offer
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8 md:px-40 px-8 py-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-8 md:px-40 px-8 py-8">
         {data.map((item, index) => (
           <WhyChooseUsCard
             key={index}

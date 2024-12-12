@@ -38,7 +38,7 @@ export default function Blog() {
         </div>
       )}
 
-      <div className="flex flex-wrap p-4 md:p-16 mx-auto justify-center items-center gap-4">
+      <div className="flex flex-wrap p-4 md:p-16 mx-auto justify-center items-center gap-12">
         {blogs.map((blog, index) => (
           <BlogCard
             title={blog.title}

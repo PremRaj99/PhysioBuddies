@@ -3,7 +3,9 @@ import Accordion from "./Accordion";
 
 const FAQ = () => {
   return (
-    <div className="py-4 px-8 gap-3 bg-bg-primary rounded-lg flex flex-col justify-center items-center">
+    <div className="py-16 gap-3 bg-bg-primary rounded-lg flex flex-col  items-center">
+      
+      <h2 className="text-center text-2xl text-text-primary font-bold">Frequently Asked Question </h2>
       <Accordion
         title={"What is the cost of therapy?"}
         answer={

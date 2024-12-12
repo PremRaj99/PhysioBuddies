@@ -9,15 +9,15 @@ export default function WhyChooseUsCard({
   desc,
 }) {
   return (
-    <div className=" text-text-primary flex flex-col items-center gap-4 justify-center p-4">
-      <div className="p-4 flex w-full justify-center fill-bg-primary">
+    <div className="bg-bg-secondary shadow-lg rounded-lg text-text-primary flex flex-col items-center gap-4 justify-center p-4">
+      <div className="flex w-full justify-center fill-bg-primary">
         <img
           src={icon}
           alt="icon"
           className="md:w-28 md:h-28 w-14 h-14 "
         />
       </div>
-      <div className="text-center flex flex-col gap-4 p-4 justify-center">
+      <div className="text-center flex flex-col gap-4 px-4  justify-center">
         <h3 className="font-bold md:text-2xl text-base ">
           {title}
         </h3>

@@ -26,24 +26,22 @@ export default function ServicesCard({
 
         {/* Back side */}
         <div className="absolute inset-0 flex items-center justify-center bg-teal-500 rounded-lg [transform:rotateY(180deg)] [backface-visibility:hidden] p-4">
-          <p className="text-white md:text-sm text-xs">
-            <ul className="list-disc pl-5 space-y-2 ">
-              {desc && desc.length > 0 ? (
-                desc.map((item, index) => (
-                  <li
-                    key={index}
-                    className=""
-                  >
-                    {item}
-                  </li>
-                ))
-              ) : (
-                <li className=" italic">
-                  No description available
+          <ul className="list-disc pl-5 space-y-2 text-white md:text-sm text-xs">
+            {desc && desc.length > 0 ? (
+              desc.map((item, index) => (
+                <li
+                  key={index}
+                  className=""
+                >
+                  {item}
                 </li>
-              )}
-            </ul>
-          </p>
+              ))
+            ) : (
+              <li className=" italic">
+                No description available
+              </li>
+            )}
+          </ul>
         </div>
       </div>
     </div>

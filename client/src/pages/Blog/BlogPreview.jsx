@@ -50,8 +50,8 @@ export default function BlogPreview() {
   }
 
   return (
-    <div className="bg-bg-secondary min-h-screen py-8">
-      <div className="container mx-auto px-4">
+    <div className="bg-bg-secondary min-h-screen  py-8">
+      <div className="container md:w-2/3 w-auto mx-auto px-4">
         {/* Blog Header */}
         <div className="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
           {/* Thumbnail */}
@@ -59,7 +59,7 @@ export default function BlogPreview() {
             <img
               src={blog.thumbnail}
               alt={blog.title}
-              className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+              className="w-full h-full aspect-video object-cover transition-transform duration-300 hover:scale-105"
             />
           </div>
 
@@ -105,10 +105,10 @@ export default function BlogPreview() {
           <p className="text-text-primary mb-6 max-w-xl mx-auto">
             Stay updated with our latest insights,
             tips, and stories. Subscribe to our
-            newsletter today!
+            Community today!
           </p>
-          <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
-            Subscribe to Newsletter
+          <button className="bg-white border-text-primary text-text-primary border hover:bg-text-primary hover:text-white font-semibold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
+            Join Our Community
           </button>
         </div>
       </div>

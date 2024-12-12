@@ -70,6 +70,8 @@ export default function AddBlog() {
     []
   );
 
+  console.log(content);
+
   return (
     <div className="bg-bg-secondary p-4 flex flex-col justify-center items-center shadow-lg">
       <div className="rounded-lg gap-10 shadow-lg flex flex-col md:flex-row justify-between bg-bg-primary p-4 w-screen md:w-3/4">
