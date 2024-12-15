@@ -1,1 +1,3 @@
-export const DB_NAME = "PhysioBuddies"
+// export const DB_NAME="";
+export const DB_NAME="PhysioBuddies";
+
