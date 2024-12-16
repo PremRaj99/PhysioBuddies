@@ -2,6 +2,9 @@ import express from "express";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import morgan from "morgan";
+import path from "path";
+
+const __dirname = path.resolve();
 
 const app = express();
 
@@ -39,8 +42,14 @@ app.use("/api/v1/availability", availabilityRouter);
 app.use("/api/v1/payment", paymentRouter);
 app.use("/api/v1/blog", blogRouter);
 
-app.get("/", (req, res) => {
-  res.send("Welcome to PhysioBuddies API");
+// app.get("/", (req, res) => {
+//   res.send("Welcome to PhysioBuddies API");
+// });
+
+app.use(express.static(path.join(__dirname, "../client/dist")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../client", "dist", "index.html"));
 });
 
 app.use((err, req, res, next) => {
